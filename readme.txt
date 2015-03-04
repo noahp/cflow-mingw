@@ -1,5 +1,8 @@
-2015-03-03
+cflow-mingw
+=====
 
+Building
+=====
 Download and install mingw and msys (base configuration for each).
 I used msys 1.0 and mingw "TDM-GCC 4.7.1 32-bit".
 
@@ -10,3 +13,7 @@ Run the following commands in the cflow distribution directory-
 
 After building, executable is available under src.
 Prebuilt executable stored under /cflow-mingw.
+
+License
+=====
+GPL v3 from cflow.
