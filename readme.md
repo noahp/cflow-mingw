@@ -14,7 +14,7 @@ make
 ```
 
 After building, executable is available under src.
-Prebuilt executable stored under /cflow-mingw.
+Prebuilt executable stored in project root.
 
 License
 =====
