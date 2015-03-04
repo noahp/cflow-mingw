@@ -1,0 +1,28 @@
+2006-07-21  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* vi.po: Update
+
+2006-06-15  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* vi.po: New translation by Clytie Siddall
+	* LINGUAS: Add vi
+
+2006-03-15  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* LINGUAS: Add da
+
+2005-11-04  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* da.po: New translation by Morten Bo Johansen.
+
+2005-04-22  Sergey Poznyakoff  <gray@Mirddin.farlep.net>
+
+	* Makevars: New file
+	* POTFILES.in: New file
+
+
+Local Variables:
+mode: change-log
+version-control: never
+End:
+

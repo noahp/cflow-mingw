@@ -1,0 +1,12 @@
+# Default configuration file for cflow.
+--symbol __inline:=inline
+--symbol __inline__:=inline
+--symbol __const__:=const
+--symbol __const:=const
+--symbol __restrict:=restrict
+--symbol __extension__:qualifier
+--symbol __attribute__:wrapper
+--symbol __asm__:wrapper
+--symbol __nonnull:wrapper
+--symbol __wur:wrapper
+	   

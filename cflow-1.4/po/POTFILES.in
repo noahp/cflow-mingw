@@ -1,0 +1,11 @@
+src/c.l
+src/main.c
+src/parser.c
+src/rc.c
+src/symbol.c
+
+gnu/argp-help.c
+gnu/argp-parse.c
+gnu/error.c
+gnu/getopt.c
+gnu/obstack.c

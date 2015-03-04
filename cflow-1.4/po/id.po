@@ -1,0 +1,557 @@
+# Indonesian translations for cflow package.
+# Copyright (C) 2008 Free Software Foundation, Inc.
+# This file is distributed under the same license as the cflow package.
+# Andhika Padmawan <andhika.padmawan@gmail.com>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cflow 1.3\n"
+"Report-Msgid-Bugs-To: bug-cflow@gnu.org\n"
+"POT-Creation-Date: 2011-10-11 23:17+0300\n"
+"PO-Revision-Date: 2009-07-12 09:47-0400\n"
+"Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
+"Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/c.l:154
+msgid "unterminated string?"
+msgstr "benang tidak dimatikan?"
+
+#: src/c.l:338
+#, c-format
+msgid "Command line: %s\n"
+msgstr "Baris perintah: %s\n"
+
+#: src/c.l:341
+#, c-format
+msgid "cannot execute `%s'"
+msgstr "tak dapat mengeksekusi `%s'"
+
+#: src/c.l:396 src/rc.c:60
+#, c-format
+msgid "cannot open `%s'"
+msgstr "tak dapat membuka `%s'"
+
+#: src/c.l:477
+#, c-format
+msgid "New location: %s:%d\n"
+msgstr "Lokasi baru: %s:%d\n"
+
+#: src/main.c:28
+msgid "generate a program flowgraph"
+msgstr "hasilkan grafik aliran program"
+
+#: src/main.c:30
+msgid ""
+"* The effect of each option marked with an asterisk is reversed if the "
+"option's long name is prefixed with `no-'. For example, --no-cpp cancels --"
+"cpp."
+msgstr ""
+"* Efek tiap opsi ditandai dengan asteris akan dibalik jika nama panjang opsi "
+"diawali dengan `no-'. Misalnya, --no-cpp membatalkan --cpp."
+
+#: src/main.c:61
+msgid "General options:"
+msgstr "Opsi umum:"
+
+#: src/main.c:62 src/main.c:103
+msgid "NUMBER"
+msgstr "NOMOR"
+
+#: src/main.c:63
+msgid "Set the depth at which the flowgraph is cut off"
+msgstr "Atur kedalaman saat grafik aliran diputus"
+
+#: src/main.c:64
+msgid "CLASSES"
+msgstr "KELAS"
+
+#: src/main.c:65
+msgid ""
+"Include specified classes of symbols (see below). Prepend CLASSES with ^ or "
+"- to exclude them from the output"
+msgstr ""
+"Sertakan kelas simbol yang ditentukan (lihat di bawah). Tambahkan KELAS "
+"dengan ^ atau - untuk mengecualikannya dari keluaran"
+
+#: src/main.c:66 src/main.c:107 src/main.c:111 gnu/argp-parse.c:85
+msgid "NAME"
+msgstr "NAMA"
+
+#: src/main.c:67
+msgid ""
+"Use given output format NAME. Valid names are `gnu' (default) and `posix'"
+msgstr ""
+"Gunakan format NAMA keluaran yang diberikan. Nama yang sah adalah "
+"`gnu' (standar) dan `posix'"
+
+#: src/main.c:70
+msgid "* Print reverse call tree"
+msgstr "* Cetak pohon panggilan terbalik"
+
+#: src/main.c:72
+msgid "Produce cross-reference listing only"
+msgstr "Hasilkan hanya penyenaraian referensi silang"
+
+#: src/main.c:73
+msgid "OPT"
+msgstr "OPT"
+
+#: src/main.c:74
+msgid ""
+"Set printing option to OPT. Valid OPT values are: xref (or cross-ref), tree. "
+"Any unambiguous abbreviation of the above is also accepted"
+msgstr ""
+"Atur opsi pencentakan ke OPT. Nilai OPT yang sah adalah: xref (atau refernsi "
+"silang), pohon. Singkatan tidak ambigu selain kata di atas juga diterima"
+
+#: src/main.c:76
+msgid "FILE"
+msgstr "BERKAS"
+
+#: src/main.c:77
+msgid "Set output file name (default -, meaning stdout)"
+msgstr "Atur nama berkas keluaran (standar -, berarti stdout)"
+
+#: src/main.c:80
+msgid "Symbols classes for --include argument"
+msgstr "Kelas simbol untuk argumen --include"
+
+#: src/main.c:82
+msgid "all data symbols, both external and static"
+msgstr "semua simbol data, baik eksternal dan statis"
+
+#: src/main.c:84
+msgid "symbols whose names begin with an underscore"
+msgstr "simbol yang namanya dimulai dengan garis bawah"
+
+#: src/main.c:86
+msgid "static symbols"
+msgstr "simbol statis"
+
+#: src/main.c:88
+msgid "typedefs (for cross-references only)"
+msgstr "typedefs (hanya untuk referensi silang)"
+
+#: src/main.c:94
+msgid "Parser control:"
+msgstr "Kontrol parser:"
+
+#: src/main.c:96
+msgid "* Rely on indentation"
+msgstr "* Bergantung pada indentasi"
+
+#: src/main.c:100
+msgid "* Accept only sources in ANSI C"
+msgstr "* Hanya terima sumber dalam ANSI C"
+
+#: src/main.c:104
+msgid "Set initial token stack size to NUMBER"
+msgstr "Atur ukuran tumpukan token awal ke NOMOR"
+
+#: src/main.c:105
+#, fuzzy
+msgid "SYMBOL:[=]TYPE"
+msgstr "SIMBOL:TIPE"
+
+#: src/main.c:106
+#, fuzzy
+msgid ""
+"Register SYMBOL with given TYPE, or define an alias (if := is used). Valid "
+"types are: keyword (or kw), modifier, qualifier, identifier, type, wrapper. "
+"Any unambiguous abbreviation of the above is also accepted"
+msgstr ""
+"Daftarkan SIMBOL dengan TIPE yang diberikan. Tipe yang sah adalah: kata "
+"kunci (atau kw), pemodifikasi, pengidentifikasi, tipe, pembungkus. Singkatan "
+"tidak ambigu selain kata di atas juga diterima"
+
+#: src/main.c:108
+msgid "Assume main function to be called NAME"
+msgstr "Asumsikan fungsi utama untuk dipanggil NAMA"
+
+#: src/main.c:109
+msgid "NAME[=DEFN]"
+msgstr "NAMA[=DEFN]"
+
+#: src/main.c:110
+msgid "Predefine NAME as a macro"
+msgstr "Pradefinisikan NAMA sebagai makro"
+
+#: src/main.c:112
+msgid "Cancel any previous definition of NAME"
+msgstr "Batalkan definisi apapun sebelumnya dari NAMA"
+
+#: src/main.c:113
+msgid "DIR"
+msgstr "DIR"
+
+#: src/main.c:114
+msgid ""
+"Add the directory DIR to the list of directories to be searched for header "
+"files."
+msgstr ""
+"Tambah direktori DIR ke senarai direktori untuk ditelusuri tajuk berkasnya."
+
+#: src/main.c:115
+msgid "COMMAND"
+msgstr "PERINTAH"
+
+#: src/main.c:116
+msgid "* Run the specified preprocessor command"
+msgstr "* Jalankan perintah praprosesor yang ditentukan"
+
+#: src/main.c:124
+msgid "Output control:"
+msgstr "Kendali keluaran:"
+
+#: src/main.c:126
+msgid "* Print line numbers"
+msgstr "* Cetak nomor baris"
+
+#: src/main.c:130
+msgid "* Print nesting level along with the call tree"
+msgstr "* Cetak penyarangan level bersama pemanggilan pohon"
+
+#: src/main.c:134
+msgid "Control graph appearance"
+msgstr "Kendali tampilan grafik"
+
+#: src/main.c:136
+msgid "* Draw ASCII art tree"
+msgstr "* Gambar pohon seni ASCII"
+
+#: src/main.c:140
+msgid "* Brief output"
+msgstr "* Keluaran singkat"
+
+#: src/main.c:144
+msgid "* Additionally format output for use with GNU Emacs"
+msgstr "* Keluaran format tambahan untuk digunakan dengan GNU Emacs"
+
+#: src/main.c:148
+msgid "* Do not print argument lists in function declarations"
+msgstr "* Jangan cetak senarai argumen dalam deklarasi fungsi"
+
+#: src/main.c:152
+msgid "* Do not print symbol names in declaration strings"
+msgstr "* Jangan cetak nama simbol dalam benang deklarasi"
+
+#: src/main.c:158
+msgid "Informational options:"
+msgstr "Opsi informasional:"
+
+#: src/main.c:160
+msgid "* Verbose error diagnostics"
+msgstr "* Diagnonis galat lengkap"
+
+#: src/main.c:164
+msgid "Set debugging level"
+msgstr "Atur level pengawakutuan"
+
+#: src/main.c:266
+#, c-format
+msgid "%s: no symbol type supplied"
+msgstr "%s: tak ada tipe simbol yang diberikan"
+
+#: src/main.c:287
+#, c-format
+msgid "unknown symbol type: %s"
+msgstr "tipe simbol tak diketahui: %s"
+
+#: src/main.c:315
+#, c-format
+msgid "unknown print option: %s"
+msgstr "opsi cetak tak diketahui: %s"
+
+#: src/main.c:438 src/main.c:447
+#, c-format
+msgid "level indent string is too long"
+msgstr "benang inden level terlalu panjang"
+
+#: src/main.c:475
+#, c-format
+msgid "level-indent syntax"
+msgstr "sintaks inden level"
+
+#: src/main.c:499
+#, c-format
+msgid "unknown level indent option: %s"
+msgstr "opsi inden level tak diketahui: %s"
+
+#: src/main.c:576 src/main.c:775
+#, c-format
+msgid "%s: No such output driver"
+msgstr "%s: Tak ada penggerak keluaran seperti itu"
+
+#: src/main.c:604
+#, c-format
+msgid "Unknown symbol class: %c"
+msgstr "Kelas simbol tak diketahui: %c"
+
+#: src/main.c:684
+msgid "[FILE]..."
+msgstr "[BERKAS]..."
+
+#: src/main.c:731
+#, c-format
+msgid "Exiting"
+msgstr "Keluar"
+
+#: src/main.c:809
+#, c-format
+msgid "no input files"
+msgstr "tak ada berkas masukan"
+
+#: src/parser.c:122
+#, c-format
+msgid " near "
+msgstr " dekat"
+
+#: src/parser.c:191
+#, c-format
+msgid "INTERNAL ERROR: cannot return token to stream"
+msgstr "GALAT INTERNAL: tak dapat mengembalikan token ke arus"
+
+#: src/parser.c:266
+#, fuzzy
+msgid "unrecognized definition"
+msgstr "%s: opsi tak dikenal `--%s'\n"
+
+#: src/parser.c:412 src/parser.c:536 src/parser.c:645
+msgid "unexpected end of file in declaration"
+msgstr "akhir berkas yang tak diharapkan di deklarasi"
+
+#: src/parser.c:463
+msgid "unexpected end of file in expression"
+msgstr "akhir berkas yang tak diharapkan di ekspresi"
+
+#: src/parser.c:519 src/parser.c:620
+msgid "expected `;'"
+msgstr "`;' tak diharapkan"
+
+#: src/parser.c:569
+msgid "missing `;' after struct declaration"
+msgstr "kehilangan `;' setelah deklarasi struct"
+
+#: src/parser.c:667
+msgid "unexpected end of file in initializer list"
+msgstr "akhir berkas yang tak diharapkan di senarai penginisialisasi"
+
+#: src/parser.c:697 src/parser.c:704
+msgid "unexpected end of file in struct"
+msgstr "akhir berkas yang tak diharapkan di struct"
+
+#: src/parser.c:751 src/parser.c:816
+msgid "unexpected end of file in function declaration"
+msgstr "akhir berkas yang tak diharapkan dalam deklarasi fungsi"
+
+#: src/parser.c:783 src/parser.c:806
+msgid "expected `)'"
+msgstr "mengharapkan `)'"
+
+#: src/parser.c:878
+msgid "unexpected token in parameter list"
+msgstr "token yang tak diharapkan di senarai parameter"
+
+#: src/parser.c:894
+msgid "unexpected end of file in parameter list"
+msgstr "akhir berkas yang tak diharapkan di senarai parameter"
+
+#: src/parser.c:932
+msgid "forced function body close"
+msgstr "penutupan tubuh fungsi yang dipaksa"
+
+#: src/parser.c:946
+msgid "unexpected end of file in function body"
+msgstr "akhir berkas yang tak diharapkan di tubuh fungsi"
+
+#: src/parser.c:1043
+#, c-format
+msgid "%s/%d redefined"
+msgstr "%s/%d didefinisikan ulang"
+
+#: src/parser.c:1047
+#, fuzzy, c-format
+msgid "%s redefined"
+msgstr "%s/%d didefinisikan ulang"
+
+#: src/parser.c:1050
+#, c-format
+msgid "this is the place of previous definition"
+msgstr "ini adalah tempat definisi sebelumnya"
+
+#: src/parser.c:1064
+#, c-format
+msgid "%s:%d: %s/%d defined to %s\n"
+msgstr "%s:%d: %s/%d didefinisikan sebagai %s\n"
+
+#: src/parser.c:1089
+#, c-format
+msgid "%s:%d: type %s\n"
+msgstr "%s:%d: tipe %s\n"
+
+#: src/rc.c:55
+#, c-format
+msgid "not enough memory to process rc file"
+msgstr "tak cukup memori untuk memproses berkas rc"
+
+#: gnu/argp-help.c:149
+#, c-format
+msgid "ARGP_HELP_FMT: %s value is less than or equal to %s"
+msgstr "ARGP_HELP_FMT: nilai %s kuran dari atau sama dengan %s"
+
+#: gnu/argp-help.c:222
+#, c-format
+msgid "%.*s: ARGP_HELP_FMT parameter requires a value"
+msgstr "%.*s: parameter ARGP_HELP_FMT memerlukan nilai"
+
+#: gnu/argp-help.c:228
+#, c-format
+msgid "%.*s: ARGP_HELP_FMT parameter must be positive"
+msgstr "%.*s: parameter ARGP_HELP_FMT harus positif"
+
+#: gnu/argp-help.c:237
+#, c-format
+msgid "%.*s: Unknown ARGP_HELP_FMT parameter"
+msgstr "%.*s: Parameter ARGP_HELP_FMT tak diketahui"
+
+#: gnu/argp-help.c:249
+#, c-format
+msgid "Garbage in ARGP_HELP_FMT: %s"
+msgstr "Sampah di ARGP_HELP_FMT: %s"
+
+#: gnu/argp-help.c:1246
+msgid ""
+"Mandatory or optional arguments to long options are also mandatory or "
+"optional for any corresponding short options."
+msgstr ""
+"Argumen mandatoris atau pilihan untuk opsi panjang juga merupakan mandatoris "
+"atau pilihan bagi opsi pendek lainnya."
+
+#: gnu/argp-help.c:1639
+msgid "Usage:"
+msgstr "Penggunaan:"
+
+#: gnu/argp-help.c:1643
+msgid "  or: "
+msgstr "  atau: "
+
+#: gnu/argp-help.c:1655
+msgid " [OPTION...]"
+msgstr "[OPSI...]"
+
+#: gnu/argp-help.c:1682
+#, c-format
+msgid "Try `%s --help' or `%s --usage' for more information.\n"
+msgstr "Coba `%s --help' atau `%s --usage' untuk informasi lebih lanjut.\n"
+
+#: gnu/argp-help.c:1710
+#, c-format
+msgid "Report bugs to %s.\n"
+msgstr "Laporkan kutu ke %s.\n"
+
+#: gnu/argp-help.c:1929 gnu/error.c:129
+msgid "Unknown system error"
+msgstr "Galat sistem tak diketahui"
+
+#: gnu/argp-parse.c:83
+msgid "give this help list"
+msgstr "berikan senarai bantuan ini"
+
+#: gnu/argp-parse.c:84
+msgid "give a short usage message"
+msgstr "berikan pesan penggunaan singkat"
+
+#: gnu/argp-parse.c:85
+msgid "set the program name"
+msgstr "atur nama program"
+
+#: gnu/argp-parse.c:86
+msgid "SECS"
+msgstr "SECS"
+
+#: gnu/argp-parse.c:87
+msgid "hang for SECS seconds (default 3600)"
+msgstr "tahan selama SECS detik (standar 3600)"
+
+#: gnu/argp-parse.c:144
+msgid "print program version"
+msgstr "cetak versi program"
+
+#: gnu/argp-parse.c:160
+msgid "(PROGRAM ERROR) No version known!?"
+msgstr "(GALAT PROGRAM) Tak ada versi diketahui!?"
+
+#: gnu/argp-parse.c:613
+#, c-format
+msgid "%s: Too many arguments\n"
+msgstr "%s: Terlalu banyak argumen\n"
+
+#: gnu/argp-parse.c:756
+msgid "(PROGRAM ERROR) Option should have been recognized!?"
+msgstr "(GALAT PROGRAM) Opsi harus dikenali!?"
+
+#: gnu/getopt.c:529 gnu/getopt.c:545
+#, c-format
+msgid "%s: option `%s' is ambiguous\n"
+msgstr "%s: opsi `%s' ambigu\n"
+
+#: gnu/getopt.c:578 gnu/getopt.c:582
+#, c-format
+msgid "%s: option `--%s' doesn't allow an argument\n"
+msgstr "%s: opsi `--%s' tidak mengizinkan argumen\n"
+
+#: gnu/getopt.c:591 gnu/getopt.c:596
+#, c-format
+msgid "%s: option `%c%s' doesn't allow an argument\n"
+msgstr "%s: opsi `%c%s' tidak mengizinkan argumen\n"
+
+#: gnu/getopt.c:639 gnu/getopt.c:658 gnu/getopt.c:974 gnu/getopt.c:993
+#, c-format
+msgid "%s: option `%s' requires an argument\n"
+msgstr "%s: opsi `%s' memerlukan argumen\n"
+
+#: gnu/getopt.c:696 gnu/getopt.c:699
+#, c-format
+msgid "%s: unrecognized option `--%s'\n"
+msgstr "%s: opsi tak dikenal `--%s'\n"
+
+#: gnu/getopt.c:707 gnu/getopt.c:710
+#, c-format
+msgid "%s: unrecognized option `%c%s'\n"
+msgstr "%s: opsi tak dikenal `%c%s'\n"
+
+#: gnu/getopt.c:762 gnu/getopt.c:765
+#, c-format
+msgid "%s: illegal option -- %c\n"
+msgstr "%s: opsi ilegal -- %c\n"
+
+#: gnu/getopt.c:771 gnu/getopt.c:774
+#, c-format
+msgid "%s: invalid option -- %c\n"
+msgstr "%s: opsi tidak sah -- %c\n"
+
+#: gnu/getopt.c:826 gnu/getopt.c:842 gnu/getopt.c:1046 gnu/getopt.c:1064
+#, c-format
+msgid "%s: option requires an argument -- %c\n"
+msgstr "%s: opsi memerlukan argumen -- %c\n"
+
+#: gnu/getopt.c:895 gnu/getopt.c:911
+#, c-format
+msgid "%s: option `-W %s' is ambiguous\n"
+msgstr "%s: opsi `-W %s' ambigu\n"
+
+#: gnu/getopt.c:935 gnu/getopt.c:953
+#, c-format
+msgid "%s: option `-W %s' doesn't allow an argument\n"
+msgstr "%s: opsi `-W %s' tidak mengizinkan argumen\n"
+
+#: gnu/obstack.c:425 gnu/obstack.c:427
+msgid "memory exhausted"
+msgstr "memori kelelahan"
+
+#~ msgid "not enough core"
+#~ msgstr "inti tidak cukup"
