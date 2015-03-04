@@ -8,4 +8,5 @@ Run the following commands in the cflow distribution directory-
 >bash configure
 >make
 
-Executable is available under src.
+After building, executable is available under src.
+Prebuilt executable stored under /cflow-mingw.
