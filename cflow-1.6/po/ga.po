@@ -1,0 +1,617 @@
+# Irish translations for cflow.
+# Copyright (C) 2006 Free Software Foundation, Inc.
+# This file is distributed under the same license as the cflow package.
+# Kevin Patrick Scannell <scannell@SLU.EDU>, 2006, 2007, 2010, 2015, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: cflow 1.4.90\n"
+"Report-Msgid-Bugs-To: bug-cflow@gnu.org\n"
+"POT-Creation-Date: 2019-02-23 14:29+0200\n"
+"PO-Revision-Date: 2017-01-09 11:31-0500\n"
+"Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
+"Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
+"Language: ga\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+
+#: src/c.l:152
+msgid "unterminated string?"
+msgstr "teaghrán gan chríochnú?"
+
+#: src/c.l:336
+#, c-format
+msgid "Command line: %s\n"
+msgstr "Líne na n-orduithe: %s\n"
+
+#: src/c.l:339
+#, c-format
+msgid "cannot execute `%s'"
+msgstr "ní féidir `%s' a rith"
+
+#: src/c.l:394 src/rc.c:58
+#, c-format
+msgid "cannot open `%s'"
+msgstr "ní féidir `%s' a oscailt"
+
+#: src/c.l:475
+#, c-format
+msgid "New location: %s:%d\n"
+msgstr "Suíomh nua: %s:%d\n"
+
+#: src/main.c:26
+msgid "generate a program flowgraph"
+msgstr "cruthaigh sreabhghraf don ríomhchlár"
+
+#: src/main.c:28
+msgid ""
+"* The effect of each option marked with an asterisk is reversed if the "
+"option's long name is prefixed with `no-'. For example, --no-cpp cancels --"
+"cpp."
+msgstr ""
+"* Má chuirtear réimír `no-' roimh rogha, diúltaíonn sé éifeacht na rogha "
+"sin.  Mar shampla, cealaíonn --no-cpp rogha --cpp."
+
+#: src/main.c:60
+msgid "General options:"
+msgstr "Roghanna ginearálta:"
+
+#: src/main.c:61 src/main.c:102
+msgid "NUMBER"
+msgstr "UIMHIR"
+
+#: src/main.c:62
+msgid "Set the depth at which the flowgraph is cut off"
+msgstr "Socraigh an doimhneacht ag a stoptar an sreabhghraf"
+
+#: src/main.c:63
+msgid "CLASSES"
+msgstr "AICMÍ"
+
+#: src/main.c:64
+msgid ""
+"Include specified classes of symbols (see below). Prepend CLASSES with ^ or "
+"- to exclude them from the output"
+msgstr ""
+"Cuir na haicmí sonraithe de shiombalacha san áireamh (féach thíos). Cuir ^ "
+"nó - roimh AICMÍ chun iad a fhágáil as an aschur"
+
+#: src/main.c:65 src/main.c:106 src/main.c:112 gnu/argp-parse.c:85
+msgid "NAME"
+msgstr "AINM"
+
+#: src/main.c:66
+msgid ""
+"Use given output format NAME. Valid names are `gnu' (default) and `posix'"
+msgstr ""
+"Úsáid formáid aschurtha AINM. Ceadaítear na hainmneacha `gnu' (réamhshocrú) "
+"agus `posix'"
+
+#: src/main.c:69
+msgid "* Print reverse call tree"
+msgstr "* Taispeáin crann aisiompaithe glaoite"
+
+#: src/main.c:71
+msgid "Produce cross-reference listing only"
+msgstr "Liostáil chrostagartha amháin"
+
+#: src/main.c:72
+msgid "OPT"
+msgstr "ROGHA"
+
+#: src/main.c:73
+msgid ""
+"Set printing option to OPT. Valid OPT values are: xref (or cross-ref), tree. "
+"Any unambiguous abbreviation of the above is also accepted"
+msgstr ""
+"Socraigh rogha phriontála mar ROGHA. Ceadaítear na luachanna seo: xref (nó "
+"cross-ref), tree.  Glactar le giorrúcháin gan athbhrí de na luachanna seo "
+"freisin"
+
+#: src/main.c:75
+msgid "FILE"
+msgstr "COMHAD"
+
+#: src/main.c:76
+msgid "Set output file name (default -, meaning stdout)"
+msgstr "Socraigh ainm an aschomhaid (is é - an réamhshocrú, .i. stdout)"
+
+#: src/main.c:79
+msgid "Symbols classes for --include argument"
+msgstr "Aicmí de shiombalacha le haghaidh argóinte --include"
+
+#: src/main.c:81
+msgid "all data symbols, both external and static"
+msgstr "gach siombail sonraí, seachtrach agus statach araon"
+
+#: src/main.c:83
+msgid "symbols whose names begin with an underscore"
+msgstr "siombailí le hainm a thosaíonn le fostríoc"
+
+#: src/main.c:85
+msgid "static symbols"
+msgstr "siombailí statacha"
+
+#: src/main.c:87
+msgid "typedefs (for cross-references only)"
+msgstr "typedef-anna (crostagairtí amháin)"
+
+#: src/main.c:93
+msgid "Parser control:"
+msgstr "Rialú an pharsálaí:"
+
+#: src/main.c:95
+msgid "* Rely on indentation"
+msgstr "* Braith ar eangú"
+
+#: src/main.c:99
+msgid "* Accept only sources in ANSI C"
+msgstr "* Glac le cód foinseach ANSI C amháin"
+
+#: src/main.c:103
+msgid "Set initial token stack size to NUMBER"
+msgstr "Socraigh UIMHIR mar méid tosaigh na cruaiche comhartha"
+
+#: src/main.c:104
+msgid "SYMBOL:[=]TYPE"
+msgstr "SIOMBAIL:[=]CINEÁL"
+
+#: src/main.c:105
+msgid ""
+"Register SYMBOL with given TYPE, or define an alias (if := is used). Valid "
+"types are: keyword (or kw), modifier, qualifier, identifier, type, wrapper. "
+"Any unambiguous abbreviation of the above is also accepted"
+msgstr ""
+"Cláraigh SIOMBAIL leis an CINEÁL sonraithe, nó cláraigh leasainm (le :=). "
+"Ceadaítear na cineálacha seo: keyword (nó kw), modifier, identifier, type, "
+"wrapper. Glactar le giorrúcháin gan athbhrí de na cineálacha seo freisin"
+
+#: src/main.c:107
+msgid "Assume main function to be called NAME"
+msgstr "Úsáid AINM mar an príomhfheidhm (\"main\")"
+
+#: src/main.c:109
+msgid "There's no main function; print graphs for all functions in the program"
+msgstr ""
+
+#: src/main.c:110
+msgid "NAME[=DEFN]"
+msgstr "AINM[=SAINMHÍNIÚ]"
+
+#: src/main.c:111
+msgid "Predefine NAME as a macro"
+msgstr "Réamhshocraigh AINM mar mhacra"
+
+#: src/main.c:113
+msgid "Cancel any previous definition of NAME"
+msgstr "Cealaigh aon sainmhíniú ar AINM a bhí ann roimhe seo"
+
+#: src/main.c:114
+msgid "DIR"
+msgstr "COMHADLANN"
+
+#: src/main.c:115
+msgid ""
+"Add the directory DIR to the list of directories to be searched for header "
+"files."
+msgstr ""
+"Cuir COMHADLANN le liosta na gcomhadlann ina ndéantar cuardach ar chomhaid "
+"cheanntáisc."
+
+#: src/main.c:116
+msgid "COMMAND"
+msgstr "ORDÚ"
+
+#: src/main.c:117
+msgid "* Run the specified preprocessor command"
+msgstr "* Rith an t-ordú sonraithe réamhphróiseálaí"
+
+#: src/main.c:125
+msgid "Output control:"
+msgstr "Rialú aschurtha:"
+
+#: src/main.c:127
+msgid "Show all functions, not only those reachable from main"
+msgstr ""
+
+#: src/main.c:130
+msgid "* Print line numbers"
+msgstr "* Taispeáin líne-uimhreacha"
+
+#: src/main.c:134
+msgid "* Print nesting level along with the call tree"
+msgstr "* Taispeáin an leibhéal neadaithe in éineacht leis an gcrann glaoite"
+
+#: src/main.c:138
+msgid "Control graph appearance"
+msgstr "Rialaigh leagan amach an ghraif"
+
+#: src/main.c:140
+msgid "* Draw ASCII art tree"
+msgstr "* Taispeáin an crann mar ealaín ASCII"
+
+#: src/main.c:144
+msgid "* Brief output"
+msgstr "* Aschur gonta"
+
+#: src/main.c:148
+msgid "* Additionally format output for use with GNU Emacs"
+msgstr "* Formáidigh an t-aschur lena úsáid le GNU Emacs"
+
+#: src/main.c:152
+msgid "* Do not print argument lists in function declarations"
+msgstr "* Ná taispeáin liostaí argóintí i bhfógraí feidhme"
+
+#: src/main.c:156
+msgid "* Do not print symbol names in declaration strings"
+msgstr "* Ná taispeáin ainmneacha siombalach i dteaghráin fhógartha"
+
+#: src/main.c:162
+msgid "Informational options:"
+msgstr "Roghanna faisnéiseacha:"
+
+#: src/main.c:164
+msgid "* Verbose error diagnostics"
+msgstr "* Diagnóisic fhoclach earráide"
+
+#: src/main.c:168
+msgid "Set debugging level"
+msgstr "Socraigh an leibhéal dífhabhtaithe"
+
+#: src/main.c:270
+#, c-format
+msgid "%s: no symbol type supplied"
+msgstr "%s: níor tugadh cineál siombaile"
+
+#: src/main.c:290
+#, c-format
+msgid "unknown symbol type: %s"
+msgstr "cineál anaithnid siombaile: %s"
+
+#: src/main.c:316
+#, c-format
+msgid "unknown print option: %s"
+msgstr "rogha anaithnid phriontála: %s"
+
+#: src/main.c:440 src/main.c:447
+#, c-format
+msgid "level indent string is too long"
+msgstr "tá an teaghrán eangaithe leibhéil rófhada"
+
+#: src/main.c:473
+#, c-format
+msgid "level-indent syntax"
+msgstr "comhréir eangaithe leibhéil"
+
+#: src/main.c:495
+#, c-format
+msgid "unknown level indent option: %s"
+msgstr "rogha anaithnid eangaithe leibhéil: %s"
+
+#: src/main.c:575
+#, c-format
+msgid "%s: No such output driver"
+msgstr "%s: Níl aon tiománaí ann den sórt seo"
+
+#: src/main.c:603
+#, c-format
+msgid "Unknown symbol class: %c"
+msgstr "Aicme shiombaile anaithnid: %c"
+
+#: src/main.c:687
+msgid "[FILE]..."
+msgstr "[COMHAD]..."
+
+#: src/main.c:734
+#, c-format
+msgid "Exiting"
+msgstr "Ag scor"
+
+#: src/main.c:780
+#, c-format
+msgid "INTERNAL ERROR: %s: No such output driver"
+msgstr "EARRÁID INMHEÁNACH: %s: Níl a leithéid tiománaí aschurtha ann"
+
+#: src/main.c:827
+#, c-format
+msgid "no input files"
+msgstr "gan inchomhaid"
+
+#: src/parser.c:209
+#, c-format
+msgid " near "
+msgstr " gar do "
+
+#: src/parser.c:312
+#, c-format
+msgid "INTERNAL ERROR: cannot return token to stream"
+msgstr ""
+"EARRÁID INMHEÁNACH: ní féidir teaghrán comhartha a fhilleadh ar an sruth"
+
+#: src/parser.c:403
+msgid "unrecognized definition"
+msgstr "sainmhíniú anaithnid"
+
+#: src/parser.c:558 src/parser.c:695 src/parser.c:785
+msgid "unexpected end of file in declaration"
+msgstr "comhadchríoch gan choinne san fhógra"
+
+#: src/parser.c:609
+msgid "unexpected end of file in expression"
+msgstr "comhadchríoch gan choinne sa slonn"
+
+#: src/parser.c:676 src/parser.c:761
+msgid "expected `;'"
+msgstr "bhíothas ag súil le `;'"
+
+#: src/parser.c:714
+msgid "missing `;' after struct declaration"
+msgstr "`;' ar iarraidh tar éis fógra struct"
+
+#: src/parser.c:807
+msgid "unexpected end of file in initializer list"
+msgstr "comhadchríoch gan choinne i liosta túsaitheoirí"
+
+#: src/parser.c:837 src/parser.c:844
+msgid "unexpected end of file in struct"
+msgstr "comhadchríoch gan choinne i struct"
+
+#: src/parser.c:893 src/parser.c:958
+msgid "unexpected end of file in function declaration"
+msgstr "comhadchríoch gan choinne i bhfógra feidhme"
+
+#: src/parser.c:925 src/parser.c:948
+msgid "expected `)'"
+msgstr "bhíothas ag súil le `)'"
+
+#: src/parser.c:1020
+msgid "unexpected token in parameter list"
+msgstr "teaghrán comhartha gan súil leis i liosta paraiméadar"
+
+#: src/parser.c:1036
+msgid "unexpected end of file in parameter list"
+msgstr "comhadchríoch gan choinne i liosta paraiméadar"
+
+#: src/parser.c:1074
+msgid "forced function body close"
+msgstr "dúnadh corp feidhme le lámh láidir"
+
+#: src/parser.c:1088
+msgid "unexpected end of file in function body"
+msgstr "comhadchríoch gan choinne i gcorp feidhme"
+
+#: src/parser.c:1186
+#, c-format
+msgid "%s/%d redefined"
+msgstr "sainmhíniú nua ar %s/%d"
+
+#: src/parser.c:1190
+#, c-format
+msgid "%s redefined"
+msgstr "sainmhíniú nua ar %s"
+
+#: src/parser.c:1193
+#, c-format
+msgid "this is the place of previous definition"
+msgstr "seo í an áit ina ndearnadh sainmhíniú roimhe seo"
+
+#: src/parser.c:1207
+#, c-format
+msgid "%s:%d: %s/%d defined to %s\n"
+msgstr "%s:%d: sainigh %s/%d mar %s\n"
+
+#: src/parser.c:1232
+#, c-format
+msgid "%s:%d: type %s\n"
+msgstr "%s:%d: cineál %s\n"
+
+#: gnu/argp-help.c:150
+#, c-format
+msgid "ARGP_HELP_FMT: %s value is less than or equal to %s"
+msgstr "ARGP_HELP_FMT: tá luach %s níos lú ná nó cothrom le %s"
+
+#: gnu/argp-help.c:226
+#, c-format
+msgid "%.*s: ARGP_HELP_FMT parameter requires a value"
+msgstr "%.*s: Ní mór luach a thabhairt ar an pharaiméadar ARGP_HELP_FMT"
+
+#: gnu/argp-help.c:236
+#, c-format
+msgid "%.*s: Unknown ARGP_HELP_FMT parameter"
+msgstr "%.*s: Paraiméadar anaithnid ARGP_HELP_FMT"
+
+#: gnu/argp-help.c:249
+#, c-format
+msgid "Garbage in ARGP_HELP_FMT: %s"
+msgstr "Bruscar i ARGP_HELP_FMT: %s"
+
+#: gnu/argp-help.c:1230
+msgid ""
+"Mandatory or optional arguments to long options are also mandatory or "
+"optional for any corresponding short options."
+msgstr ""
+"Is riachtanach/roghnach le rogha ghearr aon argóint atá riachtanach/roghnach "
+"leis an rogha fhada."
+
+#: gnu/argp-help.c:1619
+msgid "Usage:"
+msgstr "Úsáid:"
+
+#: gnu/argp-help.c:1623
+msgid "  or: "
+msgstr "  nó: "
+
+#: gnu/argp-help.c:1635
+msgid " [OPTION...]"
+msgstr " [ROGHA...]"
+
+#: gnu/argp-help.c:1662
+#, c-format
+msgid "Try '%s --help' or '%s --usage' for more information.\n"
+msgstr ""
+"Bain triail as '%s --help' nó '%s --usage' chun tuilleadh eolais a fháil.\n"
+
+#: gnu/argp-help.c:1690
+#, c-format
+msgid "Report bugs to %s.\n"
+msgstr "Seol tuairiscí fabhtanna chuig %s.\n"
+
+#: gnu/argp-help.c:1891 gnu/error.c:197
+msgid "Unknown system error"
+msgstr "Earráid chórais anaithnid"
+
+#: gnu/argp-parse.c:83
+msgid "give this help list"
+msgstr "taispeáin an chabhair seo"
+
+#: gnu/argp-parse.c:84
+msgid "give a short usage message"
+msgstr "taispeáin beagán eolais faoin úsáid"
+
+#: gnu/argp-parse.c:86
+msgid "set the program name"
+msgstr "socraigh ainm an ríomhchláir"
+
+#: gnu/argp-parse.c:87
+msgid "SECS"
+msgstr "SOIC"
+
+#: gnu/argp-parse.c:88
+msgid "hang for SECS seconds (default 3600)"
+msgstr "moill de SOIC soicind (réamhshocrú: 3600)"
+
+#: gnu/argp-parse.c:145
+msgid "print program version"
+msgstr "taispeáin an leagan"
+
+#: gnu/argp-parse.c:162
+msgid "(PROGRAM ERROR) No version known!?"
+msgstr "(EARRÁID RÍOMHCHLÁIR) Gan leagan!?"
+
+#: gnu/argp-parse.c:615
+#, c-format
+msgid "%s: Too many arguments\n"
+msgstr "%s: An iomarca argóintí\n"
+
+#: gnu/argp-parse.c:761
+msgid "(PROGRAM ERROR) Option should have been recognized!?"
+msgstr ""
+"(EARRÁID RÍOMHCHLÁIR) Ba chóir aitheantas a thabhairt ar an rogha seo!?"
+
+#: gnu/getopt.c:280
+#, fuzzy, c-format
+msgid "%s: option '%s%s' is ambiguous\n"
+msgstr "%s: Tá an rogha '-W %s' débhríoch\n"
+
+#: gnu/getopt.c:286
+#, fuzzy, c-format
+msgid "%s: option '%s%s' is ambiguous; possibilities:"
+msgstr "%s: Tá an rogha '%s' débhríoch; féidearthachtaí:"
+
+#: gnu/getopt.c:321
+#, fuzzy, c-format
+msgid "%s: unrecognized option '%s%s'\n"
+msgstr "%s: rogha anaithnid '%c%s'\n"
+
+#: gnu/getopt.c:347
+#, fuzzy, c-format
+msgid "%s: option '%s%s' doesn't allow an argument\n"
+msgstr "%s: ní cheadaítear argóint i ndiaidh na rogha '%c%s'\n"
+
+#: gnu/getopt.c:362
+#, fuzzy, c-format
+msgid "%s: option '%s%s' requires an argument\n"
+msgstr "%s: tá argóint de dhíth i ndiaidh na rogha '%s'\n"
+
+#: gnu/getopt.c:623
+#, c-format
+msgid "%s: invalid option -- '%c'\n"
+msgstr "%s: rogha neamhbhailí -- '%c'\n"
+
+#: gnu/getopt.c:638 gnu/getopt.c:684
+#, c-format
+msgid "%s: option requires an argument -- '%c'\n"
+msgstr "%s: tá argóint de dhíth i ndiaidh na rogha -- '%c'\n"
+
+#: gnu/obstack.c:340 gnu/obstack.c:342
+msgid "memory exhausted"
+msgstr "cuimhne ídithe"
+
+#~ msgid "%s: option '--%s' doesn't allow an argument\n"
+#~ msgstr "%s: ní cheadaítear argóint i ndiaidh na rogha '--%s'\n"
+
+#~ msgid "%s: unrecognized option '--%s'\n"
+#~ msgstr "%s: rogha anaithnid '--%s'\n"
+
+#~ msgid "%s: option '-W %s' is ambiguous\n"
+#~ msgstr "%s: Tá an rogha '-W %s' débhríoch\n"
+
+#~ msgid "%s: option '-W %s' doesn't allow an argument\n"
+#~ msgstr "%s: ní cheadaítear argóint i ndiaidh na rogha '-W %s'\n"
+
+#~ msgid "%s: option '-W %s' requires an argument\n"
+#~ msgstr "%s: tá argóint de dhíth i ndiaidh na rogha '-W %s'\n"
+
+#~ msgid "%.*s: ARGP_HELP_FMT parameter must be positive"
+#~ msgstr ""
+#~ "%.*s: Ní mór luach deimhneach a thabhairt ar an pharaiméadar ARGP_HELP_FMT"
+
+#~ msgid "not enough memory to process rc file"
+#~ msgstr "níl go leor cuimhne chun an comhad rc a phróiseáil"
+
+#~ msgid "%s: illegal option -- %c\n"
+#~ msgstr "%s: rogha neamhcheadaithe -- %c\n"
+
+#~ msgid "not enough core"
+#~ msgstr "níl go leor córchuimhne ann"
+
+#~ msgid "Print license and exit"
+#~ msgstr "Taispeáin an ceadúnas agus scoir"
+
+#~ msgid ""
+#~ "   GNU cflow is free software; you can redistribute it and/or modify\n"
+#~ "   it under the terms of the GNU General Public License as published by\n"
+#~ "   the Free Software Foundation; either version 2 of the License, or\n"
+#~ "   (at your option) any later version.\n"
+#~ "\n"
+#~ "   GNU cflow is distributed in the hope that it will be useful,\n"
+#~ "   but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+#~ "   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+#~ "   GNU General Public License for more details.\n"
+#~ "\n"
+#~ "   You should have received a copy of the GNU General Public License\n"
+#~ "   along with GNU cflow; if not, write to the Free Software Foundation,\n"
+#~ "   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n"
+#~ "\n"
+#~ "\n"
+#~ msgstr ""
+#~ "   Is saorbhogearra é GNU cflow; is féidir leat é a scaipeadh agus/nó\n"
+#~ "   a athrú de réir na gcoinníollacha den GNU General Public License mar "
+#~ "atá\n"
+#~ "   foilsithe ag an Free Software Foundation; faoi leagan 2 den "
+#~ "cheadúnas,\n"
+#~ "   nó (más mian leat) aon leagan níos déanaí.\n"
+#~ "\n"
+#~ "   Scaiptear GNU cflow le súil go mbeidh sé áisiúil, ach GAN AON "
+#~ "BHARÁNTA;\n"
+#~ "   go fiú gan an barántas intuigthe d'INDÍOLTACHT nó FEILIÚNACHT "
+#~ "D'FHEIDHM\n"
+#~ "   AR LEITH.  Féach ar an GNU General Public License chun níos mó\n"
+#~ "   sonraí a fháil.\n"
+#~ "\n"
+#~ "   Ba chóir go mbeifeá tar éis cóip den GNU General Public License a "
+#~ "fháil\n"
+#~ "   in éineacht le GNU cflow; mura bhfuair, scríobh chuig an Free "
+#~ "Software\n"
+#~ "   Foundation, Inc., 51 Franklin Street, Fifth Floor,\n"
+#~ "   Boston, MA 02110-1301 USA\n"
+#~ "\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "License for %s:\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Ceadúnas do %s:\n"
+#~ "\n"

@@ -1,0 +1,230 @@
+@c This file is part of Imprimatur.
+@c Copyright (C) 2001-2011, 2015 Sergey Poznyakoff
+@c
+@c Imprimatur is free software; you can redistribute it and/or modify
+@c it under the terms of the GNU General Public License as published by
+@c the Free Software Foundation; either version 3, or (at your option)
+@c any later version.
+@c
+@c Imprimatur is distributed in the hope that it will be useful,
+@c but WITHOUT ANY WARRANTY; without even the implied warranty of
+@c MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+@c GNU General Public License for more details.
+@c
+@c You should have received a copy of the GNU General Public License
+@c along with Imprimatur.  If not, see <http://www.gnu.org/licenses/>.
+
+@c imprimatur-ignore
+
+@c ======================================================================
+@c This file implements Fran@,{c}ois Pinard's concept of 'renditions':
+@c
+@c A document has three levels of rendition: PUBLISH, DISTRIB or PROOF,
+@c as decided by @set symbols.  The PUBLISH rendition does not show
+@c notes or marks asking for revision.  Nodes marked as unrevised or
+@c empty (see below) produce a compilation error in this rendition.
+@c It also implies @finalout.
+@c
+@c Most users will prefer having more information, even if this
+@c information is not fully revised for adequacy, so DISTRIB is the
+@c default for distributions.
+@c
+@c The PROOF rendition show all marks to the point of ugliness and is
+@c intended for those working on the manual itself.
+@c ======================================================================
+
+@ifclear PUBLISH
+@ifclear DISTRIB
+@ifclear PROOF
+@set DISTRIB
+@end ifclear
+@end ifclear
+@end ifclear
+
+@ifset PUBLISH
+@set RENDITION The book, version
+@finalout
+@end ifset
+
+@ifset DISTRIB
+@set RENDITION FTP release, version
+@end ifset
+
+@ifset PROOF
+@set RENDITION Proof reading version
+@end ifset
+
+@c ------------------------------------------------------------------
+@c @editorsnote{text} -- emit an editor note.
+@c Cannot be used inline.
+@c ------------------------------------------------------------------
+@macro editorsnote{text}
+
+@ifinfo
+@quotation
+@center ==================================================================
+@center @strong{Editor's note:}
+\text\@*
+@center ==================================================================
+@end quotation
+@end ifinfo
+@ifnotinfo
+@cartouche
+@center @strong{Editor's note:}
+\text\
+@end cartouche
+@end ifnotinfo
+@end macro
+
+@c ------------------------------------------------------------------
+@c @WRITEME -- Indicate that the node is to be written.
+@c 
+@c In PUBLISH mode, this produces a compilation error.
+@c Otherwise, this macro emits a prominent editor's notice stating
+@c that this node has yet to be written.
+@c
+@c ------------------------------------------------------------------
+@macro WRITEME
+@ifset PUBLISH
+@errormsg{Empty node in publish rendition!}
+@end ifset
+@ifclear PUBLISH
+@editorsnote{This node is to be written.}
+@end ifclear
+@end macro
+
+@c ------------------------------------------------------------------
+@c @UNREVISED -- Indicate that the node needs revision.
+@c 
+@c In PUBLISH mode, this produces a compilation error.
+@c Otherwise, this macro emits a prominent editor's notice stating
+@c that this node is not revised.
+@c
+@c ------------------------------------------------------------------
+@macro UNREVISED
+@ifset PUBLISH
+@errormsg{Unrevised node in publish rendition!}
+@end ifset
+@ifclear PUBLISH
+@editorsnote{The information in this node may be obsolete or
+otherwise inaccurate.  This message will disappear, once this node revised.}
+@end ifclear
+@end macro
+
+@c ------------------------------------------------------------------
+@c @FIXME{text} -- Output an editor's notice only in PROOF rendition.
+@c ------------------------------------------------------------------
+@ifset PROOF
+@macro FIXME{string}
+@editorsnote{\string\}
+@w{}
+@end macro
+@end ifset
+
+@ifclear PROOF
+@macro FIXME{string}
+@end macro
+@end ifclear
+
+@c ------------------------------------------------------------------
+@c @deadlink{} -- emit a dead link notice.
+@c This macro depends on the PROOF flag.  Since it is used inline,
+@c it has to be defined twice: one instance for when PROOF is set,
+@c and another one for when it is cleared.
+@c ------------------------------------------------------------------
+
+@ifset PROOF
+@macro deadlink{}
+@ (@strong{Editor's note: dangling link})
+@end macro
+@end ifset
+
+@ifclear PROOF
+@macro deadlink{}
+@end macro
+@end ifclear
+
+@c ------------------------------------------------------------------
+@c @FIXMEREF{text, string} -- output a reference to (possibly)
+@c undefined anchor.  The `text' argument is usually ``see'' or
+@c ``See'', depending on context.  The `string' argument is the cross
+@c reference text.
+@c In PROOF mode, a dangling link notice is output after the
+@c reference.
+@c
+@c This macro is used inline, so again, it is defined several times,
+@c for various output formats.
+@c ------------------------------------------------------------------
+
+@macro FIXMEREF{text,string}
+\text\ @i{\string\}@deadlink{}
+@end macro
+
+@c ------------------------------------------------------------------
+@c @FIXME-ref{node} -- produces a @ref-style reference to undefined
+@c node.
+@c ------------------------------------------------------------------
+@ifset PUBLISH
+@macro FIXME-ref{string}
+@ref{string}
+@end macro
+@end ifset
+
+@ifclear PUBLISH
+@macro FIXME-ref{string}
+@FIXMEREF{,\string\}
+@end macro
+@end ifclear
+
+@c ------------------------------------------------------------------
+@c @FIXME-pxref{node} -- produces a @pxref-style reference to
+@c undefined node.
+@c ------------------------------------------------------------------
+@ifset PUBLISH
+@macro FIXME-pxref{string}
+@pxref{string}
+@end macro
+@end ifset
+
+@ifclear PUBLISH
+@macro FIXME-pxref{string}
+@FIXMEREF{see,\string\}
+@end macro
+@end ifclear
+
+@c ------------------------------------------------------------------
+@c @FIXME-xref{node} -- produces a @xref-style reference to
+@c undefined node.
+@c ------------------------------------------------------------------
+@ifset PUBLISH
+@macro FIXME-xref{string}
+@xref{string}
+@end macro
+@end ifset
+
+@ifclear PUBLISH
+@macro FIXME-xref{string}
+@FIXMEREF{See,\string\}
+@end macro
+@end ifclear
+
+@c ===================================================================
+@c The following macros are used in imprimatur.texi to produce example
+@c outputs without triggering check rules.
+@c ===================================================================
+
+@macro example-UNREVISED
+@UNREVISED
+@end macro
+
+@macro example-WRITEME
+@WRITEME
+@end macro
+
+@macro example-FIXME{string}
+@FIXME{\string\}
+@end macro
+
+@macro example-FIXME-xref{string}
+@FIXME-xref{\string\}
+@end macro

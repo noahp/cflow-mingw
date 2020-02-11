@@ -1,0 +1,566 @@
+# Translation of cflow to Croatian.
+# Copyright © 2012 Free Software Foundation, Inc.
+# This file is distributed under the same license as the cflow package.
+# Tomislav Krznar <tomislav.krznar@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: GNU cflow 1.4\n"
+"Report-Msgid-Bugs-To: bug-cflow@gnu.org\n"
+"POT-Creation-Date: 2019-02-23 14:29+0200\n"
+"PO-Revision-Date: 2012-11-02 15:17+0100\n"
+"Last-Translator: Tomislav Krznar <tomislav.krznar@gmail.com>\n"
+"Language-Team: Croatian <lokalizacija@linux.hr>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: src/c.l:152
+msgid "unterminated string?"
+msgstr "nezavršen znakovni niz?"
+
+#: src/c.l:336
+#, c-format
+msgid "Command line: %s\n"
+msgstr "Naredbeni redak: %s\n"
+
+#: src/c.l:339
+#, c-format
+msgid "cannot execute `%s'"
+msgstr "ne mogu izvršiti „%s”"
+
+#: src/c.l:394 src/rc.c:58
+#, c-format
+msgid "cannot open `%s'"
+msgstr "ne mogu otvoriti „%s”"
+
+#: src/c.l:475
+#, c-format
+msgid "New location: %s:%d\n"
+msgstr "Nova lokacija: %s:%d\n"
+
+#: src/main.c:26
+msgid "generate a program flowgraph"
+msgstr "napravi dijagram toka programa"
+
+#: src/main.c:28
+msgid ""
+"* The effect of each option marked with an asterisk is reversed if the "
+"option's long name is prefixed with `no-'. For example, --no-cpp cancels --"
+"cpp."
+msgstr ""
+"* Utjecaj svake opcije označene zvjezdicom je suprotan ako dugačko ime "
+"opcije ima prefiks „no-”. Na primjer, --no-cpp poništava --cpp."
+
+#: src/main.c:60
+msgid "General options:"
+msgstr "Općenite opcije:"
+
+#: src/main.c:61 src/main.c:102
+msgid "NUMBER"
+msgstr "BROJ"
+
+#: src/main.c:62
+msgid "Set the depth at which the flowgraph is cut off"
+msgstr "Postavi dubinu na kojoj se dijagram toka reže"
+
+#: src/main.c:63
+msgid "CLASSES"
+msgstr "RAZREDI"
+
+#: src/main.c:64
+msgid ""
+"Include specified classes of symbols (see below). Prepend CLASSES with ^ or "
+"- to exclude them from the output"
+msgstr ""
+"Uključi navedene razrede simbola (pogledajte dolje). Prije RAZREDA stavite ^ "
+"ili - za njihovo isključivanje iz izlaza"
+
+#: src/main.c:65 src/main.c:106 src/main.c:112 gnu/argp-parse.c:85
+msgid "NAME"
+msgstr "IME"
+
+#: src/main.c:66
+msgid ""
+"Use given output format NAME. Valid names are `gnu' (default) and `posix'"
+msgstr ""
+"Koristi navedeni izlazni oblik IME. Ispravna imena su „gnu” (zadano) i "
+"„posix”"
+
+#: src/main.c:69
+msgid "* Print reverse call tree"
+msgstr "* Ispiši stablo povratnih poziva"
+
+#: src/main.c:71
+msgid "Produce cross-reference listing only"
+msgstr "Napravi samo popis unakrsnih referenci"
+
+#: src/main.c:72
+msgid "OPT"
+msgstr "OPC"
+
+#: src/main.c:73
+msgid ""
+"Set printing option to OPT. Valid OPT values are: xref (or cross-ref), tree. "
+"Any unambiguous abbreviation of the above is also accepted"
+msgstr ""
+"Postavi opciju ispisivanja na OPC. Ispravne vrijednosti OPC su: xref (ili "
+"cross-ref) i tree. Također se prihvaćaju i njihove jednoznačne skraćenice"
+
+#: src/main.c:75
+msgid "FILE"
+msgstr "DATOTEKA"
+
+#: src/main.c:76
+msgid "Set output file name (default -, meaning stdout)"
+msgstr "Postavi izlaznu datoteku (zadano -, što označava standardni izlaz)"
+
+#: src/main.c:79
+msgid "Symbols classes for --include argument"
+msgstr "Razredi simbola za argument --include"
+
+#: src/main.c:81
+msgid "all data symbols, both external and static"
+msgstr "svi podatkovni simboli, vanjski i statički"
+
+#: src/main.c:83
+msgid "symbols whose names begin with an underscore"
+msgstr "simboli čije ime počinje podvlakom („_”)"
+
+#: src/main.c:85
+msgid "static symbols"
+msgstr "statički simboli"
+
+#: src/main.c:87
+msgid "typedefs (for cross-references only)"
+msgstr "definicije vrsta (samo za unakrsne reference)"
+
+#: src/main.c:93
+msgid "Parser control:"
+msgstr "Upravljanje analizatorom:"
+
+#: src/main.c:95
+msgid "* Rely on indentation"
+msgstr "* Osloni se na uvlačenje"
+
+#: src/main.c:99
+msgid "* Accept only sources in ANSI C"
+msgstr "* Prihvati samo ANSI C izvorni kod"
+
+#: src/main.c:103
+msgid "Set initial token stack size to NUMBER"
+msgstr "Postavi početnu veličinu stoga simbola na BROJ"
+
+#: src/main.c:104
+msgid "SYMBOL:[=]TYPE"
+msgstr "SIMBOL:[=]VRSTA"
+
+#: src/main.c:105
+msgid ""
+"Register SYMBOL with given TYPE, or define an alias (if := is used). Valid "
+"types are: keyword (or kw), modifier, qualifier, identifier, type, wrapper. "
+"Any unambiguous abbreviation of the above is also accepted"
+msgstr ""
+"Upiši SIMBOL navedene VRSTE, ili definiraj drugo ime (ako se koristi :=). "
+"Ispravne vrste su: keyword (ili kw), modifier, qualifier, identifier, type, "
+"wrapper. Također se prihvaćaju i njihove jednoznačne skraćenice"
+
+#: src/main.c:107
+msgid "Assume main function to be called NAME"
+msgstr "Pretpostavi da se glavna funkcija zove IME"
+
+#: src/main.c:109
+msgid "There's no main function; print graphs for all functions in the program"
+msgstr ""
+
+#: src/main.c:110
+msgid "NAME[=DEFN]"
+msgstr "IME[=DEFN]"
+
+#: src/main.c:111
+msgid "Predefine NAME as a macro"
+msgstr "Predefiniraj IME kao makro naredbu"
+
+#: src/main.c:113
+msgid "Cancel any previous definition of NAME"
+msgstr "Poništi sve prethodne definicije IME"
+
+#: src/main.c:114
+msgid "DIR"
+msgstr "DIR"
+
+#: src/main.c:115
+msgid ""
+"Add the directory DIR to the list of directories to be searched for header "
+"files."
+msgstr ""
+"Dodaj direktorij DIR na popis direktorija za traženje datoteka zaglavlja"
+
+#: src/main.c:116
+msgid "COMMAND"
+msgstr "NAREDBA"
+
+#: src/main.c:117
+msgid "* Run the specified preprocessor command"
+msgstr "* Pokreni navedenu naredbu pretprocesora"
+
+#: src/main.c:125
+msgid "Output control:"
+msgstr "Upravljanje izlazom:"
+
+#: src/main.c:127
+msgid "Show all functions, not only those reachable from main"
+msgstr ""
+
+#: src/main.c:130
+msgid "* Print line numbers"
+msgstr "* Ispiši brojeve redaka"
+
+#: src/main.c:134
+msgid "* Print nesting level along with the call tree"
+msgstr "* Ispiši razinu ugniježđivanja uz stablo poziva"
+
+#: src/main.c:138
+msgid "Control graph appearance"
+msgstr "Upravljanje izgledom dijagrama"
+
+#: src/main.c:140
+msgid "* Draw ASCII art tree"
+msgstr "* Nacrtaj stablo u ASCII umjetnosti"
+
+#: src/main.c:144
+msgid "* Brief output"
+msgstr "* Sažeti izlaz"
+
+#: src/main.c:148
+msgid "* Additionally format output for use with GNU Emacs"
+msgstr "* Dodatno oblikuj izlaz za korištenje u GNU Emacsu"
+
+#: src/main.c:152
+msgid "* Do not print argument lists in function declarations"
+msgstr "* Ne ispisuj popise argumenata u deklaracijama funkcija"
+
+#: src/main.c:156
+msgid "* Do not print symbol names in declaration strings"
+msgstr "* Ne ispisuj imena simbola u nizovima deklaracija"
+
+#: src/main.c:162
+msgid "Informational options:"
+msgstr "Informativne opcije:"
+
+#: src/main.c:164
+msgid "* Verbose error diagnostics"
+msgstr "* Opširna dijagnostika grešaka"
+
+#: src/main.c:168
+msgid "Set debugging level"
+msgstr "Postavi razinu debugiranja"
+
+#: src/main.c:270
+#, c-format
+msgid "%s: no symbol type supplied"
+msgstr "%s: nije navedena vrsta simbola"
+
+#: src/main.c:290
+#, c-format
+msgid "unknown symbol type: %s"
+msgstr "nepoznata vrsta simbola: %s"
+
+#: src/main.c:316
+#, c-format
+msgid "unknown print option: %s"
+msgstr "nepoznata opcija ispisa: %s"
+
+#: src/main.c:440 src/main.c:447
+#, c-format
+msgid "level indent string is too long"
+msgstr "niz uvlačenja razine je predugačak"
+
+#: src/main.c:473
+#, c-format
+msgid "level-indent syntax"
+msgstr "sintaksa uvlačenja razine"
+
+#: src/main.c:495
+#, c-format
+msgid "unknown level indent option: %s"
+msgstr "nepoznata opcija uvlačenja razine: %s"
+
+#: src/main.c:575
+#, c-format
+msgid "%s: No such output driver"
+msgstr "%s: Nema takvog upravljačkog programa izlaza"
+
+#: src/main.c:603
+#, c-format
+msgid "Unknown symbol class: %c"
+msgstr "Nepoznat razred simbola: %c"
+
+#: src/main.c:687
+msgid "[FILE]..."
+msgstr "[DATOTEKA]..."
+
+#: src/main.c:734
+#, c-format
+msgid "Exiting"
+msgstr "Izlazim"
+
+#: src/main.c:780
+#, fuzzy, c-format
+msgid "INTERNAL ERROR: %s: No such output driver"
+msgstr "%s: Nema takvog upravljačkog programa izlaza"
+
+#: src/main.c:827
+#, c-format
+msgid "no input files"
+msgstr "nema ulaznih datoteka"
+
+#: src/parser.c:209
+#, c-format
+msgid " near "
+msgstr " kod "
+
+#: src/parser.c:312
+#, c-format
+msgid "INTERNAL ERROR: cannot return token to stream"
+msgstr "INTERNA GREŠKA: ne mogu vratiti simbol u tok podataka"
+
+#: src/parser.c:403
+msgid "unrecognized definition"
+msgstr "neprepoznata definicija"
+
+#: src/parser.c:558 src/parser.c:695 src/parser.c:785
+msgid "unexpected end of file in declaration"
+msgstr "neočekivani EOF u deklaraciji"
+
+#: src/parser.c:609
+msgid "unexpected end of file in expression"
+msgstr "neočekivani EOF u izrazu"
+
+#: src/parser.c:676 src/parser.c:761
+msgid "expected `;'"
+msgstr "očekujem „;”"
+
+#: src/parser.c:714
+msgid "missing `;' after struct declaration"
+msgstr "nedostaje „;” nakon deklaracije strukture"
+
+#: src/parser.c:807
+msgid "unexpected end of file in initializer list"
+msgstr "neočekivani EOF u popisu inicijalizatora"
+
+#: src/parser.c:837 src/parser.c:844
+msgid "unexpected end of file in struct"
+msgstr "neočekivani EOF u strukturi"
+
+#: src/parser.c:893 src/parser.c:958
+msgid "unexpected end of file in function declaration"
+msgstr "neočekivani EOF u deklaraciji funkcije"
+
+#: src/parser.c:925 src/parser.c:948
+msgid "expected `)'"
+msgstr "očekujem „)”"
+
+#: src/parser.c:1020
+msgid "unexpected token in parameter list"
+msgstr "neočekivani simbol u popisu parametara"
+
+#: src/parser.c:1036
+msgid "unexpected end of file in parameter list"
+msgstr "neočekivani EOF u popisu parametara"
+
+#: src/parser.c:1074
+msgid "forced function body close"
+msgstr "prisilno zatvoreno tijelo funkcije"
+
+#: src/parser.c:1088
+msgid "unexpected end of file in function body"
+msgstr "neočekivani EOF u tijelu funkcije"
+
+#: src/parser.c:1186
+#, c-format
+msgid "%s/%d redefined"
+msgstr "%s/%d ponovo definiran"
+
+#: src/parser.c:1190
+#, c-format
+msgid "%s redefined"
+msgstr "%s ponovo definiran"
+
+#: src/parser.c:1193
+#, c-format
+msgid "this is the place of previous definition"
+msgstr "ovo je mjesto prethodne definicije"
+
+#: src/parser.c:1207
+#, c-format
+msgid "%s:%d: %s/%d defined to %s\n"
+msgstr "%s:%d: %s/%d definiran u %s\n"
+
+#: src/parser.c:1232
+#, c-format
+msgid "%s:%d: type %s\n"
+msgstr "%s:%d: vrsta %s\n"
+
+#: gnu/argp-help.c:150
+#, c-format
+msgid "ARGP_HELP_FMT: %s value is less than or equal to %s"
+msgstr "ARGP_HELP_FMT: vrijednost %s je manja ili jednaka %s"
+
+#: gnu/argp-help.c:226
+#, c-format
+msgid "%.*s: ARGP_HELP_FMT parameter requires a value"
+msgstr "%.*s: ARGP_HELP_FMT parametar zahtijeva vrijednost"
+
+#: gnu/argp-help.c:236
+#, c-format
+msgid "%.*s: Unknown ARGP_HELP_FMT parameter"
+msgstr "%.*s: Nepoznati ARGP_HELP_FMT parametar"
+
+#: gnu/argp-help.c:249
+#, c-format
+msgid "Garbage in ARGP_HELP_FMT: %s"
+msgstr "Smeće u ARGP_HELP_FMT: %s"
+
+#: gnu/argp-help.c:1230
+msgid ""
+"Mandatory or optional arguments to long options are also mandatory or "
+"optional for any corresponding short options."
+msgstr ""
+"Obavezni ili opcionalni argumenti dugačkih opcija također su obavezni ili "
+"opcionalni za odgovarajuće kratke opcije."
+
+#: gnu/argp-help.c:1619
+msgid "Usage:"
+msgstr "Uporaba:"
+
+#: gnu/argp-help.c:1623
+msgid "  or: "
+msgstr "    ili: "
+
+#: gnu/argp-help.c:1635
+msgid " [OPTION...]"
+msgstr " [OPCIJA...]"
+
+#: gnu/argp-help.c:1662
+#, fuzzy, c-format
+msgid "Try '%s --help' or '%s --usage' for more information.\n"
+msgstr "Pokušajte „%s --help” ili „%s --usage” za više informacija.\n"
+
+#: gnu/argp-help.c:1690
+#, c-format
+msgid "Report bugs to %s.\n"
+msgstr "Prijavite greške na %s.\n"
+
+#: gnu/argp-help.c:1891 gnu/error.c:197
+msgid "Unknown system error"
+msgstr "Nepoznata greška sustava"
+
+#: gnu/argp-parse.c:83
+msgid "give this help list"
+msgstr "prikaži ovaj popis pomoći"
+
+#: gnu/argp-parse.c:84
+msgid "give a short usage message"
+msgstr "prikaži kratke upute za uporabu"
+
+#: gnu/argp-parse.c:86
+msgid "set the program name"
+msgstr "postavi ime programa"
+
+#: gnu/argp-parse.c:87
+msgid "SECS"
+msgstr "SEK"
+
+#: gnu/argp-parse.c:88
+msgid "hang for SECS seconds (default 3600)"
+msgstr "zaustavi na SEK sekundi (zadano 3600)"
+
+#: gnu/argp-parse.c:145
+msgid "print program version"
+msgstr "ispiši inačicu programa"
+
+#: gnu/argp-parse.c:162
+msgid "(PROGRAM ERROR) No version known!?"
+msgstr "(GREŠKA PROGRAMA) Nema poznate inačice!?"
+
+#: gnu/argp-parse.c:615
+#, c-format
+msgid "%s: Too many arguments\n"
+msgstr "%s: Previše argumenata\n"
+
+#: gnu/argp-parse.c:761
+msgid "(PROGRAM ERROR) Option should have been recognized!?"
+msgstr "(GREŠKA PROGRAMA) Opcije su trebale biti prepoznate!?"
+
+#: gnu/getopt.c:280
+#, fuzzy, c-format
+msgid "%s: option '%s%s' is ambiguous\n"
+msgstr "%s: opcija „%s” je višeznačna\n"
+
+#: gnu/getopt.c:286
+#, fuzzy, c-format
+msgid "%s: option '%s%s' is ambiguous; possibilities:"
+msgstr "%s: opcija „%s” je višeznačna\n"
+
+#: gnu/getopt.c:321
+#, fuzzy, c-format
+msgid "%s: unrecognized option '%s%s'\n"
+msgstr "%s: neprepoznata opcija „%c%s”\n"
+
+#: gnu/getopt.c:347
+#, fuzzy, c-format
+msgid "%s: option '%s%s' doesn't allow an argument\n"
+msgstr "%s: opcija „%c%s” ne dozvoljava argument\n"
+
+#: gnu/getopt.c:362
+#, fuzzy, c-format
+msgid "%s: option '%s%s' requires an argument\n"
+msgstr "%s: opcija „%s” zahtijeva argument\n"
+
+#: gnu/getopt.c:623
+#, fuzzy, c-format
+msgid "%s: invalid option -- '%c'\n"
+msgstr "%s: neispravna opcija -- %c\n"
+
+#: gnu/getopt.c:638 gnu/getopt.c:684
+#, fuzzy, c-format
+msgid "%s: option requires an argument -- '%c'\n"
+msgstr "%s: opcija zahtijeva argument -- %c\n"
+
+#: gnu/obstack.c:340 gnu/obstack.c:342
+msgid "memory exhausted"
+msgstr "memorija iscrpljena"
+
+#, fuzzy
+#~ msgid "%s: option '--%s' doesn't allow an argument\n"
+#~ msgstr "%s: opcija „--%s” ne dozvoljava argument\n"
+
+#, fuzzy
+#~ msgid "%s: unrecognized option '--%s'\n"
+#~ msgstr "%s: neprepoznata opcija „--%s”\n"
+
+#, fuzzy
+#~ msgid "%s: option '-W %s' is ambiguous\n"
+#~ msgstr "%s: opcija „-W %s” je višeznačna\n"
+
+#, fuzzy
+#~ msgid "%s: option '-W %s' doesn't allow an argument\n"
+#~ msgstr "%s: opcija „-W %s” ne dozvoljava argument\n"
+
+#, fuzzy
+#~ msgid "%s: option '-W %s' requires an argument\n"
+#~ msgstr "%s: opcija „%s” zahtijeva argument\n"
+
+#~ msgid "not enough memory to process rc file"
+#~ msgstr "nema dovoljno memorije za obradu rc datoteke"
+
+#~ msgid "%.*s: ARGP_HELP_FMT parameter must be positive"
+#~ msgstr "%.*s: ARGP_HELP_FMT parametar mora biti pozitivan"
+
+#~ msgid "%s: illegal option -- %c\n"
+#~ msgstr "%s: nedozvoljena opcija -- %c\n"

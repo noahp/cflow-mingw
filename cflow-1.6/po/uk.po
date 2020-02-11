@@ -1,0 +1,553 @@
+# Ukrainian messages for GNU cflow
+# Copyright (C) 2005, 2007, 2009, 2011, 2016 Free Software Foundation, Inc.
+# This file is distributed under the same license as the cflow package.
+# Sergey Poznyakoff <gray@gnu.org>, 2005, 2007, 2009, 2011, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cflow 1.4.90\n"
+"Report-Msgid-Bugs-To: bug-cflow@gnu.org\n"
+"POT-Creation-Date: 2019-02-23 14:29+0200\n"
+"PO-Revision-Date: 2016-03-22 13:47+0200\n"
+"Last-Translator: Sergey Poznyakoff <gray@gnu.org>\n"
+"Language-Team: Ukrainian <translation-team-uk@lists.sourceforge.net>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: src/c.l:152
+msgid "unterminated string?"
+msgstr "не завершений рядок?"
+
+#: src/c.l:336
+#, c-format
+msgid "Command line: %s\n"
+msgstr "Командний рядок: %s\n"
+
+#: src/c.l:339
+#, c-format
+msgid "cannot execute `%s'"
+msgstr "не вдається виконати `%s'"
+
+#: src/c.l:394 src/rc.c:58
+#, c-format
+msgid "cannot open `%s'"
+msgstr "не вдається відкрити `%s'"
+
+#: src/c.l:475
+#, c-format
+msgid "New location: %s:%d\n"
+msgstr "Нове розташування: %s:%d\n"
+
+#: src/main.c:26
+msgid "generate a program flowgraph"
+msgstr "Створює граф потоків керування у програмі."
+
+#: src/main.c:28
+msgid ""
+"* The effect of each option marked with an asterisk is reversed if the "
+"option's long name is prefixed with `no-'. For example, --no-cpp cancels --"
+"cpp."
+msgstr ""
+"* Помічені зірочкою опції мають зворотну дію, якщо до їх назви додати "
+"приросток `no-'. Наприклад, --no-cpp вимикає препроцесор."
+
+#: src/main.c:60
+msgid "General options:"
+msgstr "Загальні опції:"
+
+#: src/main.c:61 src/main.c:102
+msgid "NUMBER"
+msgstr "ЧИСЛО"
+
+#: src/main.c:62
+msgid "Set the depth at which the flowgraph is cut off"
+msgstr "Встановити максимальну висоту дерева викликів"
+
+#: src/main.c:63
+msgid "CLASSES"
+msgstr "КЛАСИ"
+
+#: src/main.c:64
+msgid ""
+"Include specified classes of symbols (see below). Prepend CLASSES with ^ or "
+"- to exclude them from the output"
+msgstr ""
+"Включити до графу вказані класи символів (див. нижче). Щоб їх виключити "
+"додайте ^ або - на початку аргументу"
+
+#: src/main.c:65 src/main.c:106 src/main.c:112 gnu/argp-parse.c:85
+msgid "NAME"
+msgstr "НАЗВА"
+
+#: src/main.c:66
+msgid ""
+"Use given output format NAME. Valid names are `gnu' (default) and `posix'"
+msgstr ""
+"Встановлює назву вихідного формату. Дозволені назви є: gnu (типово) та posix"
+
+#: src/main.c:69
+msgid "* Print reverse call tree"
+msgstr "* Друкує зворотне дерево викликів"
+
+#: src/main.c:71
+msgid "Produce cross-reference listing only"
+msgstr "Друкує тільки таблицю посилань"
+
+#: src/main.c:72
+msgid "OPT"
+msgstr "ОЗНАКА"
+
+#: src/main.c:73
+msgid ""
+"Set printing option to OPT. Valid OPT values are: xref (or cross-ref), tree. "
+"Any unambiguous abbreviation of the above is also accepted"
+msgstr ""
+"Встановлює опцію друкування. Дозволені ОЗНАКИ то: xref (або cross-ref) та "
+"tree. Дозволяється використовувати будь-яке однозначне скорочення цих слів"
+
+#: src/main.c:75
+msgid "FILE"
+msgstr "ФАЙЛ"
+
+#: src/main.c:76
+msgid "Set output file name (default -, meaning stdout)"
+msgstr "Встановлює назву вихідного файлу (типово -, тобто стандартний вихід)"
+
+#: src/main.c:79
+msgid "Symbols classes for --include argument"
+msgstr "Класи символів для опції --include"
+
+#: src/main.c:81
+msgid "all data symbols, both external and static"
+msgstr "всі символи-дані, як зовнішні так статичні"
+
+#: src/main.c:83
+msgid "symbols whose names begin with an underscore"
+msgstr "символи що їх назви починаються зі знаку підкреслення"
+
+#: src/main.c:85
+msgid "static symbols"
+msgstr "статичні символі"
+
+#: src/main.c:87
+msgid "typedefs (for cross-references only)"
+msgstr "назви типів з typedef (тільки для таблиці посилань)"
+
+#: src/main.c:93
+msgid "Parser control:"
+msgstr "Керування аналізатором:"
+
+#: src/main.c:95
+msgid "* Rely on indentation"
+msgstr "* Використовувати відступи під час аналізу"
+
+#: src/main.c:99
+msgid "* Accept only sources in ANSI C"
+msgstr "* Приймати тільки джерела в ANSI C"
+
+#: src/main.c:103
+msgid "Set initial token stack size to NUMBER"
+msgstr "Встановити початковий розмір стеку"
+
+#: src/main.c:104
+msgid "SYMBOL:[=]TYPE"
+msgstr "СИМВОЛ:[=]ТИП"
+
+#: src/main.c:105
+msgid ""
+"Register SYMBOL with given TYPE, or define an alias (if := is used). Valid "
+"types are: keyword (or kw), modifier, qualifier, identifier, type, wrapper. "
+"Any unambiguous abbreviation of the above is also accepted"
+msgstr ""
+"Реєструє СИМВОЛ з вказаним ТИПом або створює аліас. Дозволені типи то: "
+"keyword (або kw), modifier, qualifier, identifier, type, wrapper. "
+"Дозволяється використовувати будь-яке однозначне скорочення цих слів"
+
+#: src/main.c:107
+msgid "Assume main function to be called NAME"
+msgstr "Встановлює назву головної функції (типово `main')"
+
+#: src/main.c:109
+msgid "There's no main function; print graphs for all functions in the program"
+msgstr ""
+
+#: src/main.c:110
+msgid "NAME[=DEFN]"
+msgstr "НАЗВА=[ВИЗНАЧЕННЯ]"
+
+#: src/main.c:111
+msgid "Predefine NAME as a macro"
+msgstr "Визначити макрос з вказаною назвою"
+
+#: src/main.c:113
+msgid "Cancel any previous definition of NAME"
+msgstr "Скасувати попередні визначення макросу"
+
+#: src/main.c:114
+msgid "DIR"
+msgstr "КАТАЛОГ"
+
+#: src/main.c:115
+msgid ""
+"Add the directory DIR to the list of directories to be searched for header "
+"files."
+msgstr "Додає каталог до шляху пошуку файлів-заголовків"
+
+#: src/main.c:116
+msgid "COMMAND"
+msgstr "КОМАНДА"
+
+#: src/main.c:117
+msgid "* Run the specified preprocessor command"
+msgstr "* Вказує як запускати препроцесор"
+
+#: src/main.c:125
+msgid "Output control:"
+msgstr "Керування виводом:"
+
+#: src/main.c:127
+msgid "Show all functions, not only those reachable from main"
+msgstr ""
+
+#: src/main.c:130
+msgid "* Print line numbers"
+msgstr "* Друкувати номери рядків"
+
+#: src/main.c:134
+msgid "* Print nesting level along with the call tree"
+msgstr "* Друкувати рівень вкладеності"
+
+#: src/main.c:138
+msgid "Control graph appearance"
+msgstr "Налаштування вигляду графу"
+
+#: src/main.c:140
+msgid "* Draw ASCII art tree"
+msgstr "* Друкувати граф у формі дерева викликів"
+
+#: src/main.c:144
+msgid "* Brief output"
+msgstr "* Короткий вихідний формат"
+
+#: src/main.c:148
+msgid "* Additionally format output for use with GNU Emacs"
+msgstr "* Форматувати граф для режіму cflow GNU Emacsа"
+
+#: src/main.c:152
+msgid "* Do not print argument lists in function declarations"
+msgstr "* Не друкувати переліки аргументів у деклараціях функцій"
+
+#: src/main.c:156
+msgid "* Do not print symbol names in declaration strings"
+msgstr "* Не друкувати назви символів у деклараціях"
+
+#: src/main.c:162
+msgid "Informational options:"
+msgstr "Інформаційні опції:"
+
+#: src/main.c:164
+msgid "* Verbose error diagnostics"
+msgstr "* Докладна діагностика помилок"
+
+#: src/main.c:168
+msgid "Set debugging level"
+msgstr "Встановити рівень налагодження"
+
+#: src/main.c:270
+#, c-format
+msgid "%s: no symbol type supplied"
+msgstr "%s: невідомий тип символу: "
+
+#: src/main.c:290
+#, c-format
+msgid "unknown symbol type: %s"
+msgstr "невідомий тип символу: %s"
+
+#: src/main.c:316
+#, c-format
+msgid "unknown print option: %s"
+msgstr "невідома ознака друкування: %s"
+
+#: src/main.c:440 src/main.c:447
+#, c-format
+msgid "level indent string is too long"
+msgstr "рядок вирівнювання надто довгий"
+
+#: src/main.c:473
+#, c-format
+msgid "level-indent syntax"
+msgstr "помилка синтаксису рядку вирівнювання"
+
+#: src/main.c:495
+#, c-format
+msgid "unknown level indent option: %s"
+msgstr "невідомий опція рядку вирівнювання: %s"
+
+#: src/main.c:575
+#, c-format
+msgid "%s: No such output driver"
+msgstr "%s: не має такого вихідного приладу"
+
+#: src/main.c:603
+#, c-format
+msgid "Unknown symbol class: %c"
+msgstr "Невідомий клас символу: %c"
+
+#: src/main.c:687
+msgid "[FILE]..."
+msgstr "[FILE]..."
+
+#: src/main.c:734
+#, c-format
+msgid "Exiting"
+msgstr "Вихід"
+
+#: src/main.c:780
+#, c-format
+msgid "INTERNAL ERROR: %s: No such output driver"
+msgstr "ВНУТРІШНЯ ПОМИЛКА: %s: не має такого вихідного приладу"
+
+#: src/main.c:827
+#, c-format
+msgid "no input files"
+msgstr "не вказані вхідні файли"
+
+#: src/parser.c:209
+#, c-format
+msgid " near "
+msgstr " біля "
+
+#: src/parser.c:312
+#, c-format
+msgid "INTERNAL ERROR: cannot return token to stream"
+msgstr "ВНУТРІШНЯ ПОМИЛКА: не вдається повернути символ у потік"
+
+#: src/parser.c:403
+msgid "unrecognized definition"
+msgstr "нерозпізнане окреслення"
+
+#: src/parser.c:558 src/parser.c:695 src/parser.c:785
+msgid "unexpected end of file in declaration"
+msgstr "неочікуваний кінець файлу у декларації"
+
+#: src/parser.c:609
+msgid "unexpected end of file in expression"
+msgstr "неочікуваний кінець файлу у виразі"
+
+#: src/parser.c:676 src/parser.c:761
+msgid "expected `;'"
+msgstr "очікувалось `;'"
+
+#: src/parser.c:714
+msgid "missing `;' after struct declaration"
+msgstr "після декларації структури пропущено `;' "
+
+#: src/parser.c:807
+msgid "unexpected end of file in initializer list"
+msgstr "неочікуваний кінець файлу у переліку початкових значень"
+
+#: src/parser.c:837 src/parser.c:844
+msgid "unexpected end of file in struct"
+msgstr "неочікуваний кінець файлу у структурі"
+
+#: src/parser.c:893 src/parser.c:958
+msgid "unexpected end of file in function declaration"
+msgstr "неочікуваний кінець файлу у декларації функції"
+
+#: src/parser.c:925 src/parser.c:948
+msgid "expected `)'"
+msgstr "очікувалася `)'"
+
+#: src/parser.c:1020
+msgid "unexpected token in parameter list"
+msgstr "неочікуваний елемент у переліку параметрів"
+
+#: src/parser.c:1036
+msgid "unexpected end of file in parameter list"
+msgstr "неочікуваний кінець файлу у переліку параметрів"
+
+#: src/parser.c:1074
+msgid "forced function body close"
+msgstr "примусове закінчення тіла функції"
+
+#: src/parser.c:1088
+msgid "unexpected end of file in function body"
+msgstr "неочікуваний кінець файлу у тілі функції"
+
+#: src/parser.c:1186
+#, c-format
+msgid "%s/%d redefined"
+msgstr "перевизначення %s/%d"
+
+#: src/parser.c:1190
+#, c-format
+msgid "%s redefined"
+msgstr "перевизначення %s"
+
+#: src/parser.c:1193
+#, c-format
+msgid "this is the place of previous definition"
+msgstr "це місце першого визначення"
+
+#: src/parser.c:1207
+#, c-format
+msgid "%s:%d: %s/%d defined to %s\n"
+msgstr "%s:%d: %s/%d визначено на %s\n"
+
+#: src/parser.c:1232
+#, c-format
+msgid "%s:%d: type %s\n"
+msgstr "%s:%d: тип: %s\n"
+
+#: gnu/argp-help.c:150
+#, c-format
+msgid "ARGP_HELP_FMT: %s value is less than or equal to %s"
+msgstr "ARGP_HELP_FMT: значення параметру %s менше від або рівне %s"
+
+#: gnu/argp-help.c:226
+#, c-format
+msgid "%.*s: ARGP_HELP_FMT parameter requires a value"
+msgstr "%.*s: параметр ARGP_HELP_FMT вимагає значення"
+
+#: gnu/argp-help.c:236
+#, c-format
+msgid "%.*s: Unknown ARGP_HELP_FMT parameter"
+msgstr "%.*s: Невідомий параметр ARGP_HELP_FMT"
+
+#: gnu/argp-help.c:249
+#, c-format
+msgid "Garbage in ARGP_HELP_FMT: %s"
+msgstr "Хибні дані в ARGP_HELP_FMT: %s"
+
+#: gnu/argp-help.c:1230
+msgid ""
+"Mandatory or optional arguments to long options are also mandatory or "
+"optional for any corresponding short options."
+msgstr ""
+"Аргументи, обов'язкові для довгих ключів, є обов'язковими й для коротких."
+
+#: gnu/argp-help.c:1619
+msgid "Usage:"
+msgstr "Використання:"
+
+#: gnu/argp-help.c:1623
+msgid "  or: "
+msgstr " чи: "
+
+#: gnu/argp-help.c:1635
+msgid " [OPTION...]"
+msgstr " [ОПЦІЯ...]"
+
+#: gnu/argp-help.c:1662
+#, c-format
+msgid "Try '%s --help' or '%s --usage' for more information.\n"
+msgstr ""
+"Спробуйте '%s --help' або '%s --usage' для отримання докладнішого опису.\n"
+
+#: gnu/argp-help.c:1690
+#, c-format
+msgid "Report bugs to %s.\n"
+msgstr "Про помилки звітуйте на %s.\n"
+
+#: gnu/argp-help.c:1891 gnu/error.c:197
+msgid "Unknown system error"
+msgstr "Невідома системна помилка"
+
+#: gnu/argp-parse.c:83
+msgid "give this help list"
+msgstr "вивести цю довідку"
+
+#: gnu/argp-parse.c:84
+msgid "give a short usage message"
+msgstr "вивести коротке повідомлення про використання"
+
+#: gnu/argp-parse.c:86
+msgid "set the program name"
+msgstr "встановити назву програми"
+
+#: gnu/argp-parse.c:87
+msgid "SECS"
+msgstr "СЕКУНДИ"
+
+#: gnu/argp-parse.c:88
+msgid "hang for SECS seconds (default 3600)"
+msgstr "зачекати вказану кількість секунд (типово 3600)"
+
+#: gnu/argp-parse.c:145
+msgid "print program version"
+msgstr "вивести версію програми"
+
+#: gnu/argp-parse.c:162
+msgid "(PROGRAM ERROR) No version known!?"
+msgstr "(ПОМИЛКА ПРОГРАМУВАННЯ) Невідома версія!?"
+
+#: gnu/argp-parse.c:615
+#, c-format
+msgid "%s: Too many arguments\n"
+msgstr "%s: Забагато аргументів\n"
+
+#: gnu/argp-parse.c:761
+msgid "(PROGRAM ERROR) Option should have been recognized!?"
+msgstr "(ПОМИЛКА ПРОГРАМУВАННЯ) Опція мала бути розпізнана!?"
+
+#: gnu/getopt.c:280
+#, fuzzy, c-format
+msgid "%s: option '%s%s' is ambiguous\n"
+msgstr "%s: опція '-W %s' неоднозначна\n"
+
+#: gnu/getopt.c:286
+#, fuzzy, c-format
+msgid "%s: option '%s%s' is ambiguous; possibilities:"
+msgstr "%s: опція '%s' неоднозначна; можливі варіанти:"
+
+#: gnu/getopt.c:321
+#, fuzzy, c-format
+msgid "%s: unrecognized option '%s%s'\n"
+msgstr "%s: невідома опція '%c%s'\n"
+
+#: gnu/getopt.c:347
+#, fuzzy, c-format
+msgid "%s: option '%s%s' doesn't allow an argument\n"
+msgstr "%s: опція '%c%s' не може мати аргументу\n"
+
+#: gnu/getopt.c:362
+#, fuzzy, c-format
+msgid "%s: option '%s%s' requires an argument\n"
+msgstr "%s: опція '--%s' вимагає аргумент\n"
+
+#: gnu/getopt.c:623
+#, c-format
+msgid "%s: invalid option -- '%c'\n"
+msgstr "%s: недійсна опція -- '%c'\n"
+
+#: gnu/getopt.c:638 gnu/getopt.c:684
+#, c-format
+msgid "%s: option requires an argument -- '%c'\n"
+msgstr "%s: опція вимагає аргумент -- '%c'\n"
+
+#: gnu/obstack.c:340 gnu/obstack.c:342
+msgid "memory exhausted"
+msgstr "пам'ять вичерпана"
+
+#~ msgid "%s: option '--%s' doesn't allow an argument\n"
+#~ msgstr "%s: опція '--%s' не може мати аргументу\n"
+
+#~ msgid "%s: unrecognized option '--%s'\n"
+#~ msgstr "%s: невідома опція '--%s'\n"
+
+#~ msgid "%s: option '-W %s' is ambiguous\n"
+#~ msgstr "%s: опція '-W %s' неоднозначна\n"
+
+#~ msgid "%s: option '-W %s' doesn't allow an argument\n"
+#~ msgstr "%s: опція '-W %s' не може мати аргументу\n"
+
+#~ msgid "%s: option '-W %s' requires an argument\n"
+#~ msgstr "%s: опція '-W %s' вимагає аргумент\n"
+
+#~ msgid "%.*s: ARGP_HELP_FMT parameter must be positive"
+#~ msgstr "%.*s: параметр ARGP_HELP_FMT має бути додатнім"

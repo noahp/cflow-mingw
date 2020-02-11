@@ -1,0 +1,676 @@
+2007-06-28  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* build-aux/bootstrap: Reflect the change of the TP URL
+
+2007-06-27  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+        Relicense under GPLv3
+
+2007-05-18  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* src/main.c: Remove --license option
+
+	* build-aux/gnulib.modules: Add version-etc
+	* src/main.c, doc/cflow.texi: Remove --license option
+	* tests/version.at: Update
+	
+	* bootstrap.conf: New file
+	* build-aux/bootstrap: Replaced from the gnulib CVS
+	* configure.ac: Update
+	* po/Makevars: Remove automatically generated file
+	* src/main.c: Remove #include <strndup.h>
+	* po/da.po, po/pl.po, po/uk.po, po/vi.po: Removed.  Translations
+	will be imported directly from TP.
+	* lib/Makefile.am: New file
+	* lib/Makefile.tmpl: Removed
+	* README-hacking: New file
+	
+2006-09-11  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* src/main.c (doc): Reformat argp docstring in accordance with the
+	new argp guidelines.  Remove unneeded translators comment.
+	(main): Set program_name.
+
+2006-09-10  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* configure.ac: Remove definition of
+	HAVE_DECL_PROGRAM_INVOCATION_NAME and
+	PROGRAM_INVOCATION_NAME_DECLARED.
+	Temporarly add AM_MKINSTALLDIRS
+	* build-aux/bootstrap: Minor fixes
+	* lib/Makefile.tmpl: Define AM_CPPFLAGS
+	(EXTRA_DIST): Remove pin.c
+	* lib/pin.c: Remove
+
+2006-09-07  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* src/parser.c (declare, parse_dcl, parse_knr_dcl): Fix parsing of
+	K&R declarations, broken by modifications on 2005-09-21.
+
+	* tests/knr.at: New test case
+	* tests/Makefile.am: Add new testcase
+	* tests/testsuite.at: Likewise
+
+	* THANKS: Add Laurent and Robert E. Michael
+
+2006-09-06  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* src/symbol.c (delete_symbol): Do not free referenced symbols.
+	* tests/static.at: New testcase
+	* tests/Makefile.am: Add new testcase
+	* tests/testsuite.at: Likewise
+
+2006-07-21  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* build-aux/bootstrap (update_po): Fix updating a single
+	translation.
+
+2006-07-09  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	Released version 1.1.
+	Tag: release-1_1
+
+	* THANKS: Add Louis Bertrand.
+
+2006-06-12  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* src/output.c (set_level_mark): Fix allocation condition
+	(output): Remove erroneous initialization of level_mark.
+
+2006-03-15  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	Fix bug spotted by Jerry St.Clair: incorrect handling of
+	global/static and static/static name clashes.
+	
+	* src/parser.c (declare): Do not report name clashes
+	if a static symbol overrides another static or global.
+	(add_reference): Do not refer to static symbols if
+	-i^s was used.
+	* src/symbol.c: Change organization of the symbol table: the
+	table entry contains struct table_entry, which contains a pointer
+	to the head of the symbol list associated with the entry. Thus,
+	deletions from the table can be handled in a more natural manner.
+	All functions changed to reflect the change.
+	(unlink_symbol): New function.
+	(delete_symbol): Rewritten using unlink_symbol
+	(delete_statics): always call static_processor
+	* THANKS: Add Jerry St.Clair.
+	* tests/Makefile.am: Add hiding.at, multi.at
+	* tests/testsuite.at: Likewise.
+	* tests/hiding.at: New testcase
+	* tests/multi.at: New testcase
+	* tests/fdecl.at, tests/funcarg.at, tests/include.at,
+	tests/nfarg.at, tests/nfparg.at, tests/parm.at,
+	tests/ssblock.at: Uniformly begin AT_SETUP text with a lowercase
+	letter. 
+	
+2005-11-03  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* build-aux/bootstrap: If file `.bootstrap' exists in the cwd and is
+	readable, prepend its contents to the command line
+	* src/parser.c (dcl): Fix bug introduced 2005-03-22
+	* tests/nfarg.at: New test.
+	* tests/nfparg.at: New test.
+	* tests/Makefile.am: Add new tests.
+	* tests/testsuite.at: Likewise
+
+	* configure.ac: Raise version number to 1.1
+	* NEWS: Likewise
+	* THANKS: Add Shigio YAMAGUCHI.
+	
+2005-10-19  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* README: Minor fixes.
+	* build-aux/gnulib.modules (snprintf): Add module
+
+2005-10-15  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* THANKS: Add Nelson Beebe.
+	* tests/atlocal.in: Make sure unsetting POSIXLY_CORRECT does not
+	produce an error.
+	* tests/version.at: Fix displaying version warning
+
+	* po/pl.po,po/uk.po: Updated translations.
+	
+2005-10-05  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* src/cflow.h,src/main.c,src/parser.c,src/posix.c
+	(omit_symbol_name_option): Rename to omit_symbol_names_option. 
+
+	* src/cflow.h (newline): New prototype
+	* src/parser.c: Minor fixes
+	* src/symbol.c: Minor fixes
+
+	* doc/cflow.texi: Updated. Mention cflow2vcg and vcg tools.
+	* src/cflow.h (enum symbol_flag): New type
+	(struct symbol): Replace `int temp' with `enum symbol_flag flag'
+	(delete_parms,move_parms): New functions
+	* src/main.c: Rename --omit-symbol-name to --omit-symbol-name for
+	consistency.
+	* src/parser.c: Fix handling of function formal parameters:
+	(parm_level): New variable
+	(parse_declaration): Call delete_parms
+	(maybe_parm_list): Keep track of the parameter nesting level.
+	(func_body): Call move_parms
+	(declare): Special handling for parameters.
+	* src/symbol.c (install): Initialize sym->flag
+	(temp_processor): Use s->flag
+	(delete_parms,move_parms): New functions
+
+	* tests/parm.at: New testcase
+	* tests/Makefile.am: Add parm.at
+	* tests/testsuite.at: Likewise
+
+2005-10-04  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* doc/cflow.texi: Fix posix output
+	* src/parser.c (parse_struct): Removed function
+	* src/cflow.h (omit_arguments_option,omit_symbol_name): New
+	options.
+	* src/main.c: Likewise.
+	* src/parser.c (save_stack): Rewritten. Save only stack positions,
+	do not create character string
+	(undo_save_stack,finish_save_stack): New functions
+	(finish_save): Removed
+	* src/posix.c (print_symbol_type): Updated to match new
+	finish_save_stack strategy.
+
+2005-10-03  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* configure.ac: Raised version number to 1.0.
+	Set RENDITION level depending on the program version.
+	Make sure HAVE_DECL_PROGRAM_INVOCATION_NAME is 1.
+	* NEWS: Updated
+	* doc/Makefile.am (RENDITION): Removed assignment.
+	* doc/cflow.texi: Fix typo
+	* doc/d.c, doc/wc.c: Untabify
+	* src/Makefile.am (cflow_LDADD): Add $(LIBINTL)
+	* src/main.c ("print" option): Set hidden attribute. I'm not sure
+	whether we need this option.
+	Include strndup.h
+	* src/parser.c (parse_function_declaration): Fix ANSI compatibility 
+
+	* lib/argcv.c (argcv_unquote_copy): Minor fix.
+
+	* src/Makefile.am (cflow_CFLOW_INPUT): Use @OBJEXT@ instead of
+	$(OBJEXT) to satisfy non-GNU makes. 
+	
+2005-09-27  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* configure.ac: Raised version number to 0.2.3
+	* NEWS: Updated
+	* doc/cflow.texi: Updated.
+	* po/pl.po: Updated
+	* po/uk.po: Updated
+	* src/main.c: Updated
+	* src/parser.c (parse_function_declaration): Fix coredump
+
+2005-09-26  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* doc/cflow.texi: Updated
+	* po/pl.po: Updated
+	* po/uk.po: Updated
+	* src/main.c: Updated
+	* src/parser.c: Updated
+
+	* doc/gendocs_template: Bugfixes.
+	* src/main.c: Use --no-OPTION instead of --OPTION=no
+	* doc/cflow.texi: Likewise
+
+2005-09-25  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* doc/Makefile.am (EXTRA_DIST): Remove cflow.txt
+	* src/c.l (yywrap): Close yyin, and clean up the buffer
+	(get_token): New function. Interface to yylex.
+	* src/cflow.h (get_token): New function
+	* src/parser.c (parse_function_declaration): Take second argument,
+	specifying whether the function is called from parameter
+	declaration. All callers updated. 
+	(nexttoken): Use get_token() instead of yylex();
+	(yyparse,func_body): Eat up static qualifier
+	* tests/ssblock.at, tests/funcarg.at: New testcases
+	* tests/Makefile.am: Add ssblock.at and funcarg.at
+	* tests/testsuite.at: Likewise
+
+	* README: Updated
+	* TODO: Updated
+	* doc/cflow.txt: Removed
+
+	* doc/cflow.texi: Finished! Some @FIXMEs left, though.
+	* elisp/cflow-mode.el (cflow-find-function): Change binding to
+	@key{s}, for compatibility with po-mode.
+	* src/Makefile.am (CFLOW_FLAGS): Use --brief
+	* src/cflow.h (emacs_option): New variable
+	* src/gnu.c: Handle new --emacs option.
+	* src/main.c: Likewise.
+	* src/posix.c: Likewise.
+	* src/output.c (newline): Remove static qualifier
+
+	* doc/foo.c: New sample source
+	* doc/Makefile.am: Add foo.c
+	* doc/cflow.texi: Updated
+	* doc/wc.c: Minor formatting changes
+	* src/Makefile.am (chart.cflow): Renamed to cflow.cflow and
+	rewritten in accordance with the cflow manual guidelines.
+	* src/main.c: Minor changes.
+
+2005-09-24  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* doc/cflow.texi: Updated
+	* doc/d.c: Rewritten to better suite sample purposes.
+	* src/Makefile.am (chart.cflow): Modified rule
+	* src/cflow.h (CFLOW_PREPROC): Changed default preprocessor to
+	/usr/bin/cpp.
+
+2005-09-21  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* src/c.l (types): Add "restrict".
+	* src/cflow.rc: Define __const and __restrict as 'type'
+	* src/main.c (excluded_symbols,included_symbols): Removed
+	(symbol_map): New variable, instead of the previous two. All
+	references updated.
+	(symbol_override): Minor fix.
+	(parse_opt): Allow to use +,- and ^ in any part of the argument
+	string.
+	(included_char): Removed
+	* src/parser.c (parse_variable_declaration)
+	(parse_variable_declaration): Take an
+	extra argument indicating whether we are handling function
+	parameters. All uses changed.
+	(parse_variable_declaration,maybe_parm_list): Add error recovery.
+	(func_body): Handle static symbols separately.
+	(declare): Fix condition of declaring a function definition.
+	(reference): Update caller list as well.
+	* src/symbol.c (auto_processor): Delete only auto variables.
+
+	* tests/fdecl.at: New testcase
+	* tests/include.at: New testcase
+	* tests/attr.at: Fix to match new program diagnostics
+	* tests/Makefile.am: Add fdecl.at and include.at
+	* tests/testsuite.at: Likewise
+
+2005-09-19  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* doc/cflow.texi: Updated
+	* src/c.l: Support BCPL style comments
+	* src/parser.c (parse_function_declaration): Put token back after
+	an error.
+	(dirdcl): Handle wrappers after function declarations. Useful for
+	handling __attribute__.
+	(maybe_parm_list): Fixed counting of parameters. Print error
+	message on eof.
+	* tests/Makefile.am (TESTSUITE_AT): Add
+	attr.at,awrapper.at,pwrapper.at
+	* tests/testsuite.at: Rename CFLOW_ENV to CFLOW_OPT
+	Add attr.at,awrapper.at,pwrapper.at
+	* tests/reverse.at: Rename CFLOW_ENV to CFLOW_OPT
+	* tests/attr.at: New test
+	* tests/awrapper.at: New test
+	* tests/pwrapper.at: New test
+	
+2005-09-18  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* doc/ack.c: New sample source
+	* doc/Makefile.am (EXTRA_DIST): Add ack.c
+	* doc/cflow.texi: Updated
+	* src/output.c (print_level): Use 5 digits of reference number
+	width. 
+	
+2005-09-17  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* doc/whoami.c: New sample program
+	* doc/Makefile.am (EXTRA_DIST): Add whoami.c
+	* doc/cflow.texi: Updated
+	* src/main.c (main): Assume POSIX output format if POSIXLY_CORRECT
+	is set.
+	* tests/atlocal.in: Unset POSIXLY_CORRECT
+	
+2005-09-14  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* src/main.c (parse_opt): Bugfix: Set preprocess_option if --cpp
+	is given.
+
+	* tests/version.at: Add keywords
+	* tests/direct.at: New test
+	* tests/reverse.at: New test
+	* tests/recurse.at: New test
+	* tests/testsuite.at (CFLOW_CHECK_PROG,CFLOW_CHECK,CFLOW_ENV): New
+	macros.
+	(direct.at,reverse.at,recurse.at): New tests
+	* tests/Makefile.am: Added new tests
+	* tests/atlocal.in: Make sure CFLOW_OPTIONS and CFLOWRC are
+	initialized to predictable values
+
+	* NEWS: Updated
+	* src/main.c (include_symbol): Ignore keywords.
+
+	* Makefile.am: Set up for testsuite
+	* configure.ac: Likewise
+
+	* tests/: New directory
+	* tests/Makefile.am: New file
+	* tests/atlocal.in: New file
+	* tests/testsuite.at: New file
+	* tests/version.at: New file
+	* tests/.cvsignore: New file
+	
+	* src/main.c (main): Fixed coredump when no arguments were
+	passed.
+
+2005-09-14  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* doc/wc.c: New file. Test program for explanation purposes.
+	* doc/Makefile.am (EXTRA_DIST): Add wc.c
+	* doc/cflow.texi: Update bug reporting address.
+
+2005-08-16  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* src/c.l (yywrap,source): Use preprocess_option to determine
+	whether preprocessing is needed.
+	* src/cflow.h (preprocess_option): New variable
+	* src/main.c: Likewise
+	* src/parser.c (parse_dcl): Finalize and free declaration buffer
+	even if declare is not called.
+	 
+2005-08-06  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* src/cflow.h (cflow_output_init): New value
+	(output_init): New function
+	* src/gnu.c (gnu_output_handler): Handle cflow_output_init
+	* src/main.c: Number of i18n-related fixes.
+	(parse_opt): Call output_init
+	* src/output.c (output_init): New function
+	* src/parser.c: Number of i18n-related fixes.
+	* src/posix.c (posix_output_handler): Handle cflow_output_init
+
+	* po/POTFILES.in: Add lib/argp-help.c
+	* po/LINGUAS: Add pl and uk
+	* po/pl.po
+	* po/uk.po
+
+2005-07-09  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* lib/argcv.c: Updated from mailutils
+	* lib/argcv.h: Likewise
+	* src/c.l (input_file_count): New variable
+	* src/cflow.h: Likewise
+	* src/cflow.rc: Updated
+	* src/main.c (main): Use input_file_count to decide whether to
+	print "no input files" diagnostics.
+	* src/rc.c (sourcerc): Bug fix
+
+	* README-alpha: Minor fix
+	* configure.ac: Make sure program_invocation_name and
+	program_invocation_short_name are always present. Define
+	program_name as an alias for the former (needed for lib/error.c).
+	* lib/pin.c: New file
+	* lib/Makefile.tmpl (EXTRA_DIST): Add pin.c
+	
+2005-05-18  Sergey Poznyakoff  <gray@Mirddin.farlep.net>
+
+	* COPYING, Makefile.am, configure.ac, doc/Makefile.am,
+	doc/cflow.texi, doc/fdl.texi, doc/gendocs_template,
+	elisp/Makefile.am, elisp/cflow-mode.el, lib/Makefile.tmpl,
+	lib/argcv.c, lib/argcv.h, src/Makefile.am, src/c.l,
+	src/cflow.h, src/gnu.c, src/main.c, src/output.c,
+	src/parser.c, src/parser.h, src/posix.c, src/rc.c,
+	src/symbol.c: Changed FSF postal address
+
+2005-04-22  Sergey Poznyakoff  <gray@Mirddin.farlep.net>
+
+	* Makefile.am (SUBDIRS): Add po/
+	* configure.ac (AC_CONFIG_FILES): Add po/Makefile.in.
+	* build-aux/bootstrap: Take into account autopoint
+	* build-aux/gnulib.modules (gettext): New module
+	* src/Makefile.am (AM_CPPFLAGS): New variable
+
+	* src/c.l: Add gettext markers
+	* src/cflow.h: Likewise
+	* src/main.c: Likewise
+	* src/output.c: Likewise
+	* src/parser.c: Likewise
+	* src/rc.c: Likewise
+	* src/symbol.c: Likewise
+
+	* .cvsignore: New file
+	* po/.cvsignore: New file
+	* build-aux/.cvsignore: Updated
+	* po/Makevars: New file
+	* po/POTFILES.in: New file
+	
+2005-04-22  Sergey Poznyakoff  <gray@Mirddin.farlep.net>
+
+	cflow dubbed a GNU package and moved to savannah.
+	
+	* README-alpha (Checking Out the Sources): Updated the
+	instructions.
+	* README: Minor fix.
+	* configure.ac: Changed bug report address.
+
+2005-03-22  Sergey Poznyakoff  <gray@Mirddin.farlep.net>
+
+	* lib/argcv.c: Imported from mailutils
+	* lib/argcv.h: Imported from mailutils
+	* lib/Makefile.tmpl: Added argcv
+	* src/cflow.rc: New file
+	* src/Makefile.am: Distribute cflow.rc
+	(chart.cflow): New rule
+	* src/c.l (CFLOW_PREPROC): Moved to cflow.h
+	(set_preprocessor): Accept NULL arg
+	* src/cflow.h (CFLOW_PREPROC): New define
+	(set_preprocessor,pp_option,print_level): New prototypes
+	(level_mark): Type changed to unsigned char.
+	* src/main.c (ignore_indentation): Renamed to use_indentation,
+	sense reverted. All callers updated
+	New options: --cpp, alias to --preprocess.
+	--no-cpp, disables preprocessing
+	* src/output.c (level_mark): Type changed to unsigned char.
+	
+	* src/rc.c: Rewritten using argcv
+	* src/parser.c (ignore_indentation): Renamed to use_indentation,
+	sense reverted. All callers updated
+
+2005-03-22  Sergey Poznyakoff  <gray@Noldor.runasimi.org>
+
+	* TODO: Updated
+	* src/c.l (canonical_filename): New global
+	(update_loc): New function
+	(source): Invoke preprocessor if necessary
+	(yywrap): Stop preprocessor if necessary
+	* src/cflow.h (struct symbol.temp): New field
+	* src/gnu.c (gnu_output_handler): Do not print extra newlines
+	as separators
+	* src/main.c: New options -I, -U, -D and --preprocess
+	(main): Use ARGP_IN_ORDER when parsing arguments
+	* src/parser.c (dcl): Minor fix to allow for nameless
+	function-pointer arguments [int foo(int (*)())]
+	* src/parser.h (canonical_filename): New global
+	* src/symbol.c (install): Initialize sym->temp
+ 	(delete_statics): Unconditionally remove temporary symbols
+
+2005-03-21  Sergey Poznyakoff  <gray@Mirddin.farlep.net>
+
+	* elisp/cflow-mode.el: Font locking support
+
+2005-03-21  Sergey Poznyakoff  <gray@Noldor.runasimi.org>
+
+	* README: Updated
+	* elisp/cflow.el: Renamed to
+	* elisp/cflow-mode.el: ... this and improved
+	* src/c.l: Fixed line counting in <string> state
+	* src/cflow.h (print_line_numbers): New variable
+	* src/gnu.c (print_level): Moved to output.c
+	(print_function_name): Do not output newline in cflow_output_text
+	* src/main.c: Reordered functions
+	(find_option_type): Take third argument.
+	(symbol_override,number,parse_level_string)
+	(set_level_indent): Operate on read-only strings
+	(options): New option --number (-n)
+	* src/output.c (print_level): Moved from gnu.c
+	(print_text): New function
+	(header): Removed
+	(is_printable,is_last): New functions
+	(direct_tree,inverted_tree): Fixed printing tree branches in
+	-T mode.
+	(tree_output): Do not print headers.
+	* src/parser.c (declare): Changed error message.
+	* src/posix.c (print_symbol): Call print_level();
+	(posix_output_handler) Do not output newline in cflow_output_text
+
+2005-03-20  Sergey Poznyakoff  <gray@Noldor.runasimi.org>
+
+	* src/cflow.h (GNU_STYLE_OPTIONS,SYSTEM_ERROR)
+	(FATAL_ERROR): Removed
+	(SymFunction): Renamed to SymIdentifier. All callers updated
+	(struct symbol): Removed union, rearranged fields. All callers
+	updated
+	Implemented -ix
+	
+	* src/c.l: Likewise
+	* src/gnu.c: Likewise
+	* src/main.c: Likewise
+	* src/output.c: Likewise
+	* src/parser.c: Likewise
+	* src/posix.c: Likewise
+	* src/symbol.c: Likewise
+	
+	* TODO: Updated
+
+2005-03-20  Sergey Poznyakoff  <gray@Noldor.runasimi.org>
+
+	* doc/Makefile.am: Updated
+	* doc/cflow.texi: Documentation framework
+	* doc/fdl.texi: GNU FDL
+	* doc/rendition.texi: Rendition macros
+	* doc/gendocs_template: Template for index.html
+	* doc/.cvsignore: Updated
+
+2005-03-19  Sergey Poznyakoff  <gray@Noldor.runasimi.org>
+
+	* .cvsignore: Updated
+	* COPYING: Added to the repository
+	* TODO: Updated
+	* src/Makefile.am (AM_LEXFLAGS): Use AM_LFLAGS instead. Also,
+	removed -pl
+	* src/c.l: Requires POSIX-compliant lex (e.g. flex).
+	(WS): Ignore \f and \r
+	(init_lex): Set lexer debugging level
+	(DIGITS): Require at least one digit
+	* src/cflow.h (record_typedefs,globals_only): Removed
+	(max_depth): New variable
+	(source,yyparse,cleanup,output,init_lex,init_parse)
+	(delete_autos,delete_statics,globals_only,include_symbol): New
+	prototypes
+	(register_output): Changed type of the second argument
+	(gnu_output_handler,posix_output_handler): Return int
+	* src/gnu.c (print_symbol,gnu_output_handler): Return int
+	* src/main.c: Implemented POSIX options (except -i x)
+	(options): Reordered. Removed -C, -t (in favor of -i t), and
+	-g (in favor of -i ^s). --brief option takes an optional
+	argument (enable/disable)
+	(progname): Removed
+	(globals_only,include_symbol): New functions
+	* src/output.c (output_driver.handler,print_symbol): Return int
+	(register_output): Changed type of the second argument
+	(is_var): Rewritten using include_symbol()
+	(direct_tree,inverted_tree): Do not descend any further if
+	print_symbol returns non-0.
+	Do not process the symbol if the current nesting level exceeds
+	maximum (set up by -d option).
+	(tree_output): Print either direct or inverted graph, not both
+	* src/parser.c: Stylistic changes
+	* src/parser.h (yylex): Prototype
+	* src/posix.c: Produce inverted graph. Honor --brief option
+	* src/rc.c: Include ctype.h
+	(expand_args): Removed unused variable
+	* src/symbol.c (hash_symbol_hasher,hash_symbol_compare): Minor
+	fixes
+	(delete_statics): globals_only is now a function
+	
+2005-03-19  Sergey Poznyakoff  <gray@Noldor.runasimi.org>
+
+	* README-alpha: New file
+	* lib: New directory
+	* lib/Makefile.tmpl: New file
+	* lib/.cvsignore: New file
+	* Makefile.am (SUBDIRS): Add lib
+	* NEWS: Updated
+	* configure.ac: Raised version number to 0.2.1
+	Call cflow_GNULIB to check for missing sources
+	Call MU_DEBUG_MODE to enable debugging mode
+	* .cvsignore: Updated
+	* src/Makefile.am (INCLUDES,cflow_LDADD): Added
+
+	* build-aux: New directory
+	* build-aux/.cvsignore: New file
+	* build-aux/bootstrap: New file
+	* build-aux/debug.m4: New file
+	* build-aux/gnulib.modules: New file
+
+	* src/cflow.h: Include error.h and xalloc.h
+	(emalloc,efree): Removed. Use xmalloc instead
+	(error): Removed. Use gnulib version
+	* src/main.c: Use argp to parse arguments.
+	(temp_symbol_stack,say_and_die): Removed
+	(emalloc,efree,error): Removed
+	(xalloc_die): New function
+	(init): Updated
+	(symbol_override): Install symbols immediately
+	* src/symbol.c: Rewritten using hash module
+
+	* src/c.l: Fixed indentation
+	* src/gnu.c: Likewise
+	* src/output.c: Likewise
+	* src/parser.c: Likewise
+	* src/rc.c: Likewise
+	
+2005-03-19  Sergey Poznyakoff  <gray@Noldor.runasimi.org>
+
+	* AUTHORS: New file
+	* NEWS: New file
+	* THANKS: New file
+	* Makefile.am: New file
+	* configure.ac: New file
+	* elisp: New directory
+	* doc/Makefile.am: New file
+	* src/Makefile.am: New file
+	* src/Makefile: Removed
+	* src/posix.c: New file
+	* src/gnu.c: New file
+
+	* TODO: Updated
+	* src/cflow.h: Updated
+	* src/obstack1.h: Removed
+	* src/output.h: Removed
+	* src/hilit-cflow.el: Removed
+	* src/collect.c: Removed
+	* src/html.c: Removed
+	* src/text.c: Removed
+	* src/cflow.el: Moved to /elisp
+	* src/main.c: New option -f (--format)
+	* src/c.l: Updated
+	* src/output.c: Likewise
+	* src/parser.c: Likewise
+	* src/rc.c: Likewise
+	* src/symbol.c: Likewise
+	* src/version.h: Likewise
+	
+	* elisp/cflow.el: Moved from /src
+	* elisp/Makefile.am: New file
+
+	* src/.cvsignore: New file
+	* doc/.cvsignore: New file
+	* elisp/.cvsignore: New file
+	* .cvsignore: New file
+	
+2005-03-16  Sergey Poznyakoff  <gray@Mirddin.farlep.net>
+
+	Initial import from my RCS archives. First revisions date
+	back to 1997. The plan is to convert this to a POSIX-compatible
+	cflow utility.
+	
+
+Local Variables:
+mode: change-log
+version-control: never
+End:

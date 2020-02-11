@@ -1,0 +1,140 @@
+GNU cflow NEWS -- history of user-visible changes. 2019-02-23
+See the end of file for copying conditions.
+
+Please send cflow bug reports to <bug-cflow@gnu.org>.
+
+Version 1.6, 2019-02-23
+
+* New option --all (-A)
+
+Produce graphs for all global functions in the program.  Use this
+option if your program contains functions which are not directly
+reachable from main().
+
+The output consist of separate flow graphs for each global function
+defined in the program.  These graphs will be placed after the graph
+for main() (if it exists), and will be ordered lexicographically by
+the function name.
+
+* New option --no-main
+
+This option has the same effect as '--all', except that the graph for
+main() function (if it exists) is treated same way as all the other
+graphs, i.e. it will not be placed at the top of output, but in its
+place as per the lexicographic ordering of function names.
+
+
+Version 1.5, 2016-05-17
+
+* Correctly handle functions returning struct/union (fixes bug #31792)
+* Gracefully handle invalid inputs (fixes bug #44113)
+* Debugging output goes to stderr
+* Add a manpage
+* Consistent use of exit codes
+
+
+Version 1.4, 2011-10-11
+
+* Symbol aliases
+
+The `--symbol' option has been extended to allow for defining
+symbol aliases.  Aliases are useful for declaring reserved
+words such as `__restrict' or `__inline'.  For example,
+the option `--symbol __restrict:=restrict' instructs cflow
+to treat `__restrict' exactly as `restrict'.
+
+* New syntactic class: qualifiers
+
+Tokens in this class can legitimately appear in place
+of C qualifiers, such as `static' or `inline'.  This class
+is useful for some compiler-depending keywords, such as
+`__extension__' in gcc.  The usual declaration of this symbol
+is `--symbol __extension__:qualifier'.
+
+* Speed up recursive call detection.
+
+* Fix parsing of typedefs after `struct'.
+* Fix the output of branch marks in tree mode.
+* Fix processing of static inline functions (RH bug 650716).
+
+
+Version 1.3, 2009-07-11
+
+* Optimize symbol tables.
+
+New symbol tables considerably improve the program performance.
+
+* Bugfixes.
+
+
+Version 1.2, 2007-06-29
+
+* Licensed under the GPLv3
+
+
+Version 1.1, 2006-07-09
+
+* Bugfixes:
+** Fix stack overflow on erroneous nameless function arguments.
+** Fix global/static and static/static name clashes.
+** Fix initial allocation for level mark array
+
+* New localization: Danish and Vietnamese
+
+
+Version 1.0, 2005-10-15
+
+* First official release.
+
+
+Version 0.2.3:
+
+* Finished documentation.
+
+* Added `--no-' options.
+
+
+Version 0.2.2:
+
+* Added testsuite
+
+* New option --number=N (-nN) - print line numbers along with the flow tree
+(default in POSIX mode)
+
+* Added localization support. New localizations: Polish and Ukrainian.
+
+
+Version 0.2:
+
+* Added autoconf suite.
+* Added POSIX output support.
+
+
+Version 0.1:
+
+Initial version restored from 1997 snapshots. 
+
+
+----------------------------------------------------------------------
+* Copyright information:
+
+Copyright (C) 2005-2019 Sergey Poznyakoff
+
+   Permission is granted to anyone to make or distribute verbatim copies
+   of this document as received, in any medium, provided that the
+   copyright notice and this permission notice are preserved,
+   thus giving the recipient permission to redistribute in turn.
+
+   Permission is granted to distribute modified versions
+   of this document, or of portions of it,
+   under the above conditions, provided also that they
+   carry prominent notices stating who last changed them.
+
+Local variables:
+mode: outline
+paragraph-separate: "[ 	]*$"
+eval: (add-hook 'write-file-hooks 'time-stamp)
+time-stamp-start: "changes. "
+time-stamp-format: "%:y-%02m-%02d"
+time-stamp-end: "\n"
+end:

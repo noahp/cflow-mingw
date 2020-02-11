@@ -1,0 +1,569 @@
+# Dutch translations for GNU cflow.
+# Copyright (C) 2016 Free Software Foundation, Inc.
+# This file is distributed under the same license as the cflow package.
+#
+# "Een bret en brekfest, of hoe het dat ok."
+#
+# Benno Schulenberg <benno@vertaalt.nl>, 2012, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: cflow-1.4.90\n"
+"Report-Msgid-Bugs-To: bug-cflow@gnu.org\n"
+"POT-Creation-Date: 2019-02-23 14:29+0200\n"
+"PO-Revision-Date: 2016-03-24 09:57+0100\n"
+"Last-Translator: Benno Schulenberg <benno@vertaalt.nl>\n"
+"Language-Team: Dutch <vertaling@vrijschrift.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
+
+#: src/c.l:152
+msgid "unterminated string?"
+msgstr "onafgesloten tekenreeks?"
+
+#: src/c.l:336
+#, c-format
+msgid "Command line: %s\n"
+msgstr "Opdrachtregel: %s\n"
+
+#: src/c.l:339
+#, c-format
+msgid "cannot execute `%s'"
+msgstr "kan '%s' niet uitvoeren"
+
+#: src/c.l:394 src/rc.c:58
+#, c-format
+msgid "cannot open `%s'"
+msgstr "Kan '%s' niet openen"
+
+#: src/c.l:475
+#, c-format
+msgid "New location: %s:%d\n"
+msgstr "Nieuwe locatie: %s:%d\n"
+
+#: src/main.c:26
+msgid "generate a program flowgraph"
+msgstr "een programma-stroomdiagram genereren"
+
+#: src/main.c:28
+msgid ""
+"* The effect of each option marked with an asterisk is reversed if the "
+"option's long name is prefixed with `no-'. For example, --no-cpp cancels --"
+"cpp."
+msgstr ""
+"* Het effect van opties gemarkeerd met een asterisk wordt omgekeerd als er "
+"'no-' voor de lange naam van de optie staat.  Bijvoorbeeld: '--no-cpp' --cpp."
+
+#: src/main.c:60
+msgid "General options:"
+msgstr "Algemene opties:"
+
+#: src/main.c:61 src/main.c:102
+msgid "NUMBER"
+msgstr "GETAL"
+
+#: src/main.c:62
+msgid "Set the depth at which the flowgraph is cut off"
+msgstr "Diepte instellen waarop stroomdiagram afgekapt wordt"
+
+#: src/main.c:63
+msgid "CLASSES"
+msgstr "KLASSEN"
+
+#: src/main.c:64
+msgid ""
+"Include specified classes of symbols (see below). Prepend CLASSES with ^ or "
+"- to exclude them from the output"
+msgstr ""
+"Deze symboolklassen (zie hieronder) meenemen.  Zet er een '^' of '-' voor om "
+"ze uit de uitvoer weg te laten."
+
+#: src/main.c:65 src/main.c:106 src/main.c:112 gnu/argp-parse.c:85
+msgid "NAME"
+msgstr "NAAM"
+
+#: src/main.c:66
+msgid ""
+"Use given output format NAME. Valid names are `gnu' (default) and `posix'"
+msgstr ""
+"Deze uitvoeropmaak gebruiken.  Geldige waarden voor NAAM zijn: "
+"'gnu' (standaard) en 'posix'."
+
+#: src/main.c:69
+msgid "* Print reverse call tree"
+msgstr "* Omgekeerde aanroepenboom weergeven"
+
+#: src/main.c:71
+msgid "Produce cross-reference listing only"
+msgstr "Alleen een kruisverwijzingenlijst produceren"
+
+#: src/main.c:72
+msgid "OPT"
+msgstr "OPTIE"
+
+#: src/main.c:73
+msgid ""
+"Set printing option to OPT. Valid OPT values are: xref (or cross-ref), tree. "
+"Any unambiguous abbreviation of the above is also accepted"
+msgstr ""
+"Deze weergaveoptie instellen.  Geldige waarden voor OPTIE zijn: 'xref' (of "
+"'cross-ref') en 'tree'; ondubbelzinnige afkortingen hiervan worden ook "
+"geaccepteerd."
+
+#: src/main.c:75
+msgid "FILE"
+msgstr "BESTAND"
+
+#: src/main.c:76
+msgid "Set output file name (default -, meaning stdout)"
+msgstr "Uitvoerbestandsnaam instellen (standaard is '-': standaarduitvoer)"
+
+#: src/main.c:79
+msgid "Symbols classes for --include argument"
+msgstr "Symboolklassen voor argument van '--include'"
+
+#: src/main.c:81
+msgid "all data symbols, both external and static"
+msgstr "alle datasymbolen, zowel externe als statische"
+
+#: src/main.c:83
+msgid "symbols whose names begin with an underscore"
+msgstr "symbolen waarvan de naam begint met een liggende streep"
+
+#: src/main.c:85
+msgid "static symbols"
+msgstr "statische symbolen"
+
+#: src/main.c:87
+msgid "typedefs (for cross-references only)"
+msgstr "typedefinities (alleen voor kruisverwijzingen)"
+
+#: src/main.c:93
+msgid "Parser control:"
+msgstr "Ontledingsbeheer:"
+
+#: src/main.c:95
+msgid "* Rely on indentation"
+msgstr "* Afgaan op inspringing"
+
+#: src/main.c:99
+msgid "* Accept only sources in ANSI C"
+msgstr "* Aleen bronbestanden in ANSI C accepteren"
+
+#: src/main.c:103
+msgid "Set initial token stack size to NUMBER"
+msgstr "Begingrootte van token-stack instellen op GETAL"
+
+#: src/main.c:104
+msgid "SYMBOL:[=]TYPE"
+msgstr "SYMBOOL:[=]TYPE"
+
+#: src/main.c:105
+msgid ""
+"Register SYMBOL with given TYPE, or define an alias (if := is used). Valid "
+"types are: keyword (or kw), modifier, qualifier, identifier, type, wrapper. "
+"Any unambiguous abbreviation of the above is also accepted"
+msgstr ""
+"Het SYMBOOL registreren met dit TYPE, of een alias definiëren (wanneer ':=' "
+"gebruikt is).  Geldige typen zijn: 'keyword' (of 'kw'), 'modifier', "
+"'qualifier', 'identifier', 'type', en 'wrapper'; ondubbelzinnige afkortingen "
+"hiervan worden ook geaccepteerd."
+
+#: src/main.c:107
+msgid "Assume main function to be called NAME"
+msgstr "Neem aan dat hoofdfunctie deze NAAM heeft"
+
+#: src/main.c:109
+msgid "There's no main function; print graphs for all functions in the program"
+msgstr ""
+
+#: src/main.c:110
+msgid "NAME[=DEFN]"
+msgstr "NAAM[=DEFN]"
+
+#: src/main.c:111
+msgid "Predefine NAME as a macro"
+msgstr "Deze NAAM als macro definiëren"
+
+#: src/main.c:113
+msgid "Cancel any previous definition of NAME"
+msgstr "Elke eerdere definitie van NAAM annuleren"
+
+#: src/main.c:114
+msgid "DIR"
+msgstr "MAP"
+
+#: src/main.c:115
+msgid ""
+"Add the directory DIR to the list of directories to be searched for header "
+"files."
+msgstr ""
+"Deze MAP toevoegen aan lijst van mappen waarin naar header-bestanden gezocht "
+"wordt."
+
+#: src/main.c:116
+msgid "COMMAND"
+msgstr "OPDRACHT"
+
+#: src/main.c:117
+msgid "* Run the specified preprocessor command"
+msgstr "* De gegeven preprocessor-opdracht uitvoeren"
+
+#: src/main.c:125
+msgid "Output control:"
+msgstr "Uitvoerbeheer:"
+
+#: src/main.c:127
+msgid "Show all functions, not only those reachable from main"
+msgstr ""
+
+#: src/main.c:130
+msgid "* Print line numbers"
+msgstr "* Regelnummers weergeven"
+
+#: src/main.c:134
+msgid "* Print nesting level along with the call tree"
+msgstr "* Nestingsniveau samen met aanroepenboom weergeven"
+
+#: src/main.c:138
+msgid "Control graph appearance"
+msgstr "Uiterlijk van stuurdiagram"
+
+#: src/main.c:140
+msgid "* Draw ASCII art tree"
+msgstr "* Boom tekenen met ASCII-tekens"
+
+#: src/main.c:144
+msgid "* Brief output"
+msgstr "* Beknopte uitvoer"
+
+#: src/main.c:148
+msgid "* Additionally format output for use with GNU Emacs"
+msgstr "* Extra opmaak voor GNU Emacs aan uitvoer toevoegen"
+
+#: src/main.c:152
+msgid "* Do not print argument lists in function declarations"
+msgstr "* Argumentlijsten in functiedeclaraties niet weergeven"
+
+#: src/main.c:156
+msgid "* Do not print symbol names in declaration strings"
+msgstr "* Symboolnamen in declaratietekenreeksen niet weergeven"
+
+#: src/main.c:162
+msgid "Informational options:"
+msgstr "Informationele opties:"
+
+#: src/main.c:164
+msgid "* Verbose error diagnostics"
+msgstr "* Gedetailleerde foutmeldingen produceren"
+
+#: src/main.c:168
+msgid "Set debugging level"
+msgstr "Het debugging-niveau instellen"
+
+#: src/main.c:270
+#, c-format
+msgid "%s: no symbol type supplied"
+msgstr "%s: geen symbooltype gegeven"
+
+#: src/main.c:290
+#, c-format
+msgid "unknown symbol type: %s"
+msgstr "onbekend symbooltype: %s"
+
+#: src/main.c:316
+#, c-format
+msgid "unknown print option: %s"
+msgstr "onbekende weergaveoptie: %s"
+
+#: src/main.c:440 src/main.c:447
+#, c-format
+msgid "level indent string is too long"
+msgstr "tekenreeks van niveau-inspringing is te lang"
+
+#: src/main.c:473
+#, c-format
+msgid "level-indent syntax"
+msgstr "onjuiste syntax van niveau-inspringing"
+
+#: src/main.c:495
+#, c-format
+msgid "unknown level indent option: %s"
+msgstr "onbekende niveau-inspringingsoptie: %s"
+
+#: src/main.c:575
+#, c-format
+msgid "%s: No such output driver"
+msgstr "Uitvoerstuurprogramma %s bestaat niet"
+
+#: src/main.c:603
+#, c-format
+msgid "Unknown symbol class: %c"
+msgstr "Onbekende symboolklasse: %c"
+
+#: src/main.c:687
+msgid "[FILE]..."
+msgstr "[BESTAND]..."
+
+#: src/main.c:734
+#, c-format
+msgid "Exiting"
+msgstr "Afgesloten"
+
+#: src/main.c:780
+#, c-format
+msgid "INTERNAL ERROR: %s: No such output driver"
+msgstr "**Interne programmafout**: Uitvoerstuurprogramma %s bestaat niet"
+
+#: src/main.c:827
+#, c-format
+msgid "no input files"
+msgstr "geen invoerbestanden"
+
+#: src/parser.c:209
+#, c-format
+msgid " near "
+msgstr " bij "
+
+#: src/parser.c:312
+#, c-format
+msgid "INTERNAL ERROR: cannot return token to stream"
+msgstr ""
+"**Interne programmafout**: kan token niet teruggeven aan gegevensstroom"
+
+#: src/parser.c:403
+msgid "unrecognized definition"
+msgstr "niet-herkende definitie"
+
+#: src/parser.c:558 src/parser.c:695 src/parser.c:785
+msgid "unexpected end of file in declaration"
+msgstr "onverwacht einde van bestand in declaratie"
+
+#: src/parser.c:609
+msgid "unexpected end of file in expression"
+msgstr "onverwacht einde van bestand in expressie"
+
+#: src/parser.c:676 src/parser.c:761
+msgid "expected `;'"
+msgstr "';' werd verwacht"
+
+#: src/parser.c:714
+msgid "missing `;' after struct declaration"
+msgstr "ontbrekende ';' na struct-declaratie"
+
+#: src/parser.c:807
+msgid "unexpected end of file in initializer list"
+msgstr "onverwacht einde van bestand in initialisatorslijst"
+
+#: src/parser.c:837 src/parser.c:844
+msgid "unexpected end of file in struct"
+msgstr "onverwacht einde van bestand in struct"
+
+#: src/parser.c:893 src/parser.c:958
+msgid "unexpected end of file in function declaration"
+msgstr "onverwacht einde van bestand in functiedeclaratie"
+
+#: src/parser.c:925 src/parser.c:948
+msgid "expected `)'"
+msgstr "')' werd verwacht"
+
+#: src/parser.c:1020
+msgid "unexpected token in parameter list"
+msgstr "onverwacht token in parameterlijst"
+
+#: src/parser.c:1036
+msgid "unexpected end of file in parameter list"
+msgstr "onverwacht einde van bestand in parameterlijst"
+
+#: src/parser.c:1074
+msgid "forced function body close"
+msgstr "gedwongen afsluiting van functie-body"
+
+#: src/parser.c:1088
+msgid "unexpected end of file in function body"
+msgstr "onverwacht einde van bestand in functie-body"
+
+#: src/parser.c:1186
+#, c-format
+msgid "%s/%d redefined"
+msgstr "%s/%d is geherdefinieerd"
+
+#: src/parser.c:1190
+#, c-format
+msgid "%s redefined"
+msgstr "%s is geherdefinieerd"
+
+#: src/parser.c:1193
+#, c-format
+msgid "this is the place of previous definition"
+msgstr "dit is de plaats van de eerdere definitie"
+
+#: src/parser.c:1207
+#, c-format
+msgid "%s:%d: %s/%d defined to %s\n"
+msgstr "%s:%d: %s/%d is gedefinieerd als %s\n"
+
+#: src/parser.c:1232
+#, c-format
+msgid "%s:%d: type %s\n"
+msgstr "%s:%d: type %s\n"
+
+#: gnu/argp-help.c:150
+#, c-format
+msgid "ARGP_HELP_FMT: %s value is less than or equal to %s"
+msgstr "ARGP_HELP_FMT: waarde voor '%s' is kleiner of gelijk aan %s"
+
+#: gnu/argp-help.c:226
+#, c-format
+msgid "%.*s: ARGP_HELP_FMT parameter requires a value"
+msgstr "%.*s: Parameter in ARGP_HELP_FMT vereist een waarde"
+
+#: gnu/argp-help.c:236
+#, c-format
+msgid "%.*s: Unknown ARGP_HELP_FMT parameter"
+msgstr "%.*s: Onbekende parameter in ARGP_HELP_FMT"
+
+#: gnu/argp-help.c:249
+#, c-format
+msgid "Garbage in ARGP_HELP_FMT: %s"
+msgstr "Rommel in ARGP_HELP_FMT: %s"
+
+#: gnu/argp-help.c:1230
+msgid ""
+"Mandatory or optional arguments to long options are also mandatory or "
+"optional for any corresponding short options."
+msgstr ""
+"Een argument dat verplicht of optioneel is voor een lange optie, is dat\n"
+"ook voor de overeenkomstige korte optie."
+
+#: gnu/argp-help.c:1619
+msgid "Usage:"
+msgstr "Gebruik: "
+
+#: gnu/argp-help.c:1623
+msgid "  or: "
+msgstr "     of: "
+
+#: gnu/argp-help.c:1635
+msgid " [OPTION...]"
+msgstr " [OPTIE...]"
+
+#: gnu/argp-help.c:1662
+#, c-format
+msgid "Try '%s --help' or '%s --usage' for more information.\n"
+msgstr "Typ '%s --help' of '%s --usage' voor meer informatie.\n"
+
+#: gnu/argp-help.c:1690
+#, c-format
+msgid "Report bugs to %s.\n"
+msgstr ""
+"Rapporteer gebreken in het programma aan %s;\n"
+"meld fouten in de vertaling aan <vertaling@vrijschrift.org>.\n"
+
+#: gnu/argp-help.c:1891 gnu/error.c:197
+msgid "Unknown system error"
+msgstr "Onbekende systeemfout"
+
+#: gnu/argp-parse.c:83
+msgid "give this help list"
+msgstr "deze hulptekst tonen"
+
+#: gnu/argp-parse.c:84
+msgid "give a short usage message"
+msgstr "een korte gebruikssamenvatting tonen"
+
+#: gnu/argp-parse.c:86
+msgid "set the program name"
+msgstr "de programmanaam instellen"
+
+#: gnu/argp-parse.c:87
+msgid "SECS"
+msgstr "SECONDEN"
+
+#: gnu/argp-parse.c:88
+msgid "hang for SECS seconds (default 3600)"
+msgstr "dit aantal seconden pauzeren (standaard 3600)"
+
+#: gnu/argp-parse.c:145
+msgid "print program version"
+msgstr "programmaversie tonen"
+
+#: gnu/argp-parse.c:162
+msgid "(PROGRAM ERROR) No version known!?"
+msgstr "**Interne programmafout**: geen versie bekend!?"
+
+#: gnu/argp-parse.c:615
+#, c-format
+msgid "%s: Too many arguments\n"
+msgstr "%s: Te veel argumenten\n"
+
+#: gnu/argp-parse.c:761
+msgid "(PROGRAM ERROR) Option should have been recognized!?"
+msgstr "**Interne programmafout**: optie had herkend moeten worden!?"
+
+#: gnu/getopt.c:280
+#, fuzzy, c-format
+msgid "%s: option '%s%s' is ambiguous\n"
+msgstr "%s: optie '-W %s' is niet eenduidig\n"
+
+#: gnu/getopt.c:286
+#, fuzzy, c-format
+msgid "%s: option '%s%s' is ambiguous; possibilities:"
+msgstr "%s: optie '%s' is niet eenduidig; mogelijkheden zijn:"
+
+#: gnu/getopt.c:321
+#, fuzzy, c-format
+msgid "%s: unrecognized option '%s%s'\n"
+msgstr "%s: onbekende optie '%c%s'\n"
+
+#: gnu/getopt.c:347
+#, fuzzy, c-format
+msgid "%s: option '%s%s' doesn't allow an argument\n"
+msgstr "%s: optie '%c%s' staat geen argument toe\n"
+
+#: gnu/getopt.c:362
+#, fuzzy, c-format
+msgid "%s: option '%s%s' requires an argument\n"
+msgstr "%s: optie '--%s' vereist een argument\n"
+
+#: gnu/getopt.c:623
+#, c-format
+msgid "%s: invalid option -- '%c'\n"
+msgstr "%s: ongeldige optie -- '%c'\n"
+
+#: gnu/getopt.c:638 gnu/getopt.c:684
+#, c-format
+msgid "%s: option requires an argument -- '%c'\n"
+msgstr "%s: optie vereist een argument -- '%c'\n"
+
+#: gnu/obstack.c:340 gnu/obstack.c:342
+msgid "memory exhausted"
+msgstr "onvoldoende geheugen beschikbaar"
+
+#~ msgid "%s: option '--%s' doesn't allow an argument\n"
+#~ msgstr "%s: optie '--%s' staat geen argument toe\n"
+
+#~ msgid "%s: unrecognized option '--%s'\n"
+#~ msgstr "%s: onbekende optie '--%s'\n"
+
+#~ msgid "%s: option '-W %s' is ambiguous\n"
+#~ msgstr "%s: optie '-W %s' is niet eenduidig\n"
+
+#~ msgid "%s: option '-W %s' doesn't allow an argument\n"
+#~ msgstr "%s: optie '-W %s' staat geen argument toe\n"
+
+#~ msgid "%s: option '-W %s' requires an argument\n"
+#~ msgstr "%s: optie '-W %s' vereist een argument\n"
+
+#~ msgid "%.*s: ARGP_HELP_FMT parameter must be positive"
+#~ msgstr "%.*s: Parameter in ARGP_HELP_FMT moet positief zijn"
+
+#~ msgid "not enough memory to process rc file"
+#~ msgstr "Onvoldoende geheugen beschikbaar voor verwerken van RC-bestand"
+
+#~ msgid "%s: illegal option -- %c\n"
+#~ msgstr "%s: ongeldige optie -- %c\n"

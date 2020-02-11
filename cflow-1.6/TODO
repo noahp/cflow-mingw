@@ -1,0 +1,65 @@
+GNU cflow TODO list.  2005-11-25
+Copyright (C) 2005, Sergey Poznyakoff
+
+* Introduction
+
+This document specifies the roadmap for further modification of
+cflow. It is subdivided into four main sections: Planned Status
+Overview, and three priority sections: High Priority Issues, Medium
+Priority Issues and Low Priority Issues. The entries within each
+priority section are placed in order of decreasing priority, the
+most urgent ones being the first. 
+
+* Planned Status Overview
+
+The planned utility shall fully conform to POSIX specification of a
+cflow utility. 
+See http://www.opengroup.org/onlinepubs/009695399/utilities/cflow.html
+
+The package shall have modular architecture: the `cflow' utility itself
+shall invoke an external program (a back-end) to perform a lexical analisys
+of input sources. This will allow to use `cflow' to analize source files
+written in languages other than C.
+
+The output format of the utility shall conform to the POSIX specification.
+The program shall also be able to optionally pipe its output to an
+external program (a front-end). This will allow for creating reports in
+various formats (e.g. graph, html, etc.)
+
+* High Priority Issues
+
+** Divide and conquer: separate main cflow code (/src) and C lexical analizer
+(/back-ends/C)
+
+* Medium Priority Issues
+
+** Implement front-end support.
+
+** Provide front ends for: ASCII tree representation (~ current output look),
+XML/HTML output.
+
+** Add new back-ends: Yacc, Lex and object files. These are required by POSIX.
+
+* Low Priority Issues
+
+** Add new back-ends: C++, Scheme, Lisp... 
+
+* Copyright information:
+
+Copyright (C) 2005, Sergey Poznyakoff 
+
+   Permission is granted to anyone to make or distribute verbatim copies
+   of this document as received, in any medium, provided that the
+   copyright notice and this permission notice are preserved,
+   thus giving the recipient permission to redistribute in turn.
+
+   Permission is granted to distribute modified versions
+   of this document, or of portions of it,
+   under the above conditions, provided also that they
+   carry prominent notices stating who last changed them.
+
+
+Local variables:
+mode: outline
+paragraph-separate: "[ 	]*$"
+end:
